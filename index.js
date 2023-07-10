@@ -2,8 +2,8 @@
 
 // const geoLocAPI = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}`
 
-const geoLocAPIKEY = '42207e457e3eb8b6df3dd8146f5bfc1b';
-const forecastAPIKEY = 'ad6a22d37a6e4fdeb45135830230707';
+const geoLocAPIKEY = 'yourAPIKEY';
+const forecastAPIKEY = 'yourAPIKEY';
 
 // GETTING CITY NAME VIA SEARCH BOX not yet implemented FOR TESTING API
 // const getCityName = () => {
