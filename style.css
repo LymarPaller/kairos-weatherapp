@@ -4,6 +4,14 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;;
+
+    --background-color-day: #EAEAEA;
+    --widgetcolod-day: #FFFFFF;
+    --background-color-night: #383838;
+    --widgetcolod-night: #232323;
+    --font-color-day: #003854;
+    --font-color-night: #FFFFFF;
+    
 }
 
 /* HEADER NAVBAR */
