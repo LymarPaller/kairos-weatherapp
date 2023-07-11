@@ -11,7 +11,29 @@
     --widgetcolod-night: #232323;
     --font-color-day: #003854;
     --font-color-night: #FFFFFF;
+
+    --main-font: Bebas+Neue;
+    --paragraph-font: Montserrat;
+
+    color: var(--font-color-day);
     
+}
+
+h1 {
+    font-family: var(--main-font);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+p {
+    font-family: var(--paragraph-font);
+}
+
+body {
+    background-image: url(./photo/background-day.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 /* HEADER NAVBAR */
@@ -24,10 +46,10 @@ body {
 }
 
 .main-widgets-container {
-    background-color: red;
     width: 85vw;
     height: 80vh;
     margin-top: 10vh;
+    background-color: var(--background-color-day);
 }
 
 .navbar {
@@ -81,51 +103,97 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: aqua;
     width: 70vw;
 
 }
 
 .status-widget-1 {
-    background-color: white;
     width: 50vw;
     height: 30vh;
     margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
 .status-widget-2 {
-    background-color: white;
     width: 50vw;
     height: 30vh;
     margin: 1rem;
 }
+
+/* WIDGET 1 ELEMENTS */
+
+.widget-time {
+    font-size: 5rem;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.widget-date {
+    font-size: 2rem;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.widget-day {
+    font-family: var(--main-font);
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.widget-temp {
+    font-weight: 900;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+
 
 @media screen and (min-width: 578px) {
 
     .main-widgets-container {
-        background-color: red;
         width: 60vw;
         height: auto;
         overflow: hidden;
         margin-top: 10vh;
         display: flex;
+        border-radius: 25px;
     }
 
     #nav-bar-main {
         height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        flex-wrap: nowrap;
+    }
+
+    .search-box {
+        display: flex;
+        justify-content: center;
+    }
+
+    .search-box input {
+        border-radius: 10px;
+        margin-top: 1rem;
+        width: 13vw;
+        height: 3rem;
+        text-align: center;
     }
     
 
     .navbar {
-        background-color: black;
+        background-color: var(--widgetcolod-day);
         width: 15vw;
         height: 70vh;
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         justify-content: center;
         flex-direction: column;
-
-        border-bottom-right-radius: 25px;
-        border-top-right-radius: 25px;
     }
 
     .navbar-ul li {
@@ -173,15 +241,14 @@ body {
 
 
     .status-widget-1 {
-        background-color: white;
         width: 20vw;
-        height: 50vh;
+        height: 45vh;
         margin: 0;
     }
     .status-widget-2 {
-        background-color: white;
+        border: 1px solid black;
         width: 20vw;
-        height: 50vh;
+        height: 45vh;
         margin: 0;
     }
 
@@ -197,7 +264,7 @@ body {
         background-color: white;
         border-radius: 10px;
         width: 5rem;
-        height: 6rem;
+        height: 7rem;
         margin-top: 25px;
     }
 
