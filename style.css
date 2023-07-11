@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@200;300;400&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,7 +19,6 @@ body {
     background-color: red;
     width: 85vw;
     height: 80vh;
-    overflow: hidden;
     margin-top: 10vh;
 }
 
@@ -41,16 +42,53 @@ body {
 }
 
 .navbar-ul li {
+    
+    list-style: none;
     height: 5rem;
-    width: 5rem;
+    width: 6rem;
     background-color: white;
-    margin: .5rem;
+    margin: .3rem;
     border-radius: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-li {
-    list-style: none;
+
+.row h1 {
+    padding-top: 0.1rem;
+    font-size: .8rem;
+    margin-bottom: 0;
+};
+
+.row p {
+    font-size: .5rem;
+};
+
+/* MAIN CONTAINER */
+
+.weather-widget-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: aqua;
+    width: 70vw;
+
+}
+
+.status-widget-1 {
+    background-color: white;
+    width: 50vw;
+    height: 30vh;
+    margin: 1rem;
+}
+.status-widget-2 {
+    background-color: white;
+    width: 50vw;
+    height: 30vh;
+    margin: 1rem;
 }
 
 @media screen and (min-width: 578px) {
@@ -61,6 +99,7 @@ li {
         height: auto;
         overflow: hidden;
         margin-top: 10vh;
+        display: flex;
     }
 
     #nav-bar-main {
@@ -96,11 +135,66 @@ li {
     }
 
     .navbar-ul li {
+        background-color: white;
         height: 5rem;
         width: 15vw;
-        background-color: white;
         margin: .5rem;
+        padding-top: 1rem;
         border-radius: 0;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .row h1 {
+        font-size: 1.5rem;
+    };
+
+    .weather-all-detail-div {
+        background-color:blue;
+        display: flex;  
+    }
+
+    .weather-widget-main{
+        display: flex;
+        justify-content: center;
+        width: 45vw;
+        margin-top: 1rem;
+    }
+
+
+    .status-widget-1 {
+        background-color: white;
+        width: 20vw;
+        height: 50vh;
+        margin: 0;
+    }
+    .status-widget-2 {
+        background-color: white;
+        width: 20vw;
+        height: 50vh;
+        margin: 0;
+    }
+
+    .forecast-widget-main {
+        margin-top: 0;
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .forecast-tab {
+        background-color: white;
+        border-radius: 10px;
+        width: 5rem;
+        height: 6rem;
+        margin-top: 25px;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
     }
 }
