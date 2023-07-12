@@ -30,8 +30,8 @@
                                 <input type="text" placeholder="Enter your location..">
                             </div>
                             <li class="main-city">
-                                <h1>Quezon City</h1>
-                                <p class="m-0">Philippines</p>
+                                <h1>Quezon City</h1> <!-- api location.name -->
+                                <p class="m-0">Philippines</p> <!-- api location.country -->
                             </li>
                         </div>
                     </ul>
@@ -47,19 +47,19 @@
                         <p class="widget-date">July 07, 2023</p>
                         <h1 class="widget-day">Thursday</h1>
                         <div class="widget-temp">
-                            <span></span><p class="temp">30</p><span><p>C</p></span>
+                            <span></span><p class="temp">30</p><span><p>°C</p></span> <!-- api current.temp_c -->
                         </div>
                     </div>
                     <div class="status-widget-2">
                         <div class="image-container">
-                            <img src="./photo/clearsky-morning.svg" alt="">
-                            <h1>Sunny</h1>
+                            <img src="./photo/clearsky-morning.svg" alt=""> <!-- api current.condition.icon -->
+                            <h1>Sunny</h1> <!-- api current.condition.text -->
                         </div>
                         <div class="current-weather-details">
                             <div class="status-div">
                                 <img src="./photo/status-icon/windspeed.svg">
                                 <div class="widget-details">
-                                    <p class="chance-of-rain">3km/h</p>
+                                    <p class="chance-of-rain">3km/h</p> <!-- api current.wind_kph -->
                                     <p>Windspeed</p>
                                 </div>
                             </div>
@@ -67,15 +67,15 @@
                             <div class="status-div">
                                 <img src="./photo/status-icon/rainchance.svg">
                                 <div class="widget-details">
-                                    <p class="chance-of-rain">3%</p>
-                                    <p>CoR</p>
+                                    <p class="chance-of-rain">3%</p> <!-- api current.humidity disregard class name-->
+                                    <p>Humidity</p>
                                 </div>
                             </div>
 
                             <div class="status-div">
                                 <img src="./photo/status-icon/sunrise.svg">
                                 <div class="widget-details">
-                                    <p class="sunrise">5:00am</p>
+                                    <p class="sunrise">5:00am</p> <!-- api forecast.forecastday.astro.sunrise -->
                                     <p>Sunrise</p>
                                 </div>
                             </div>
@@ -83,7 +83,7 @@
                             <div class="status-div">
                                 <img src="./photo/status-icon/sunset.svg">
                                 <div class="widget-details">
-                                    <p class="sunset">6:00pm</p>
+                                    <p class="sunset">6:00pm</p> <!-- api forecast.forecastday.astro.sunset -->
                                     <p>Sunset</p>
                                 </div>
                             </div>
