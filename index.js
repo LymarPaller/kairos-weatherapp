@@ -16,16 +16,32 @@ const currentWeatherContainer = document.getElementById('current-weather-contain
 const windSpeed = document.getElementById('wind-speed');
 const humidity = document.getElementById('chance-of-rain');
 const tempC = document.getElementById('temp-c');
-
+const time = document.getElementById('widget-time');
+const curDate = document.getElementById('widget-date');
 
 // get postion coordinate for longitude and latitude 
-const date = new Date();
-curHour = date.getHours() > 12 ? date.getHours() - 12 : (date.getHours() < 10 ? "0" + date.getHours() : date.getHours()),
-curMinute = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes(),
+const today = new Date(),
+	weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
+	dayOfWeek = weekday[today.getDay()],
+	dayOfMonth = ( today.getDate() < 10) ? '0' + today.getDate() : today.getDate(),
+	months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'),
+	curMonth = months[today.getMonth()],
+	curYear = today.getFullYear(),
+	curHour = today.getHours() > 12 ? today.getHours() - 12 : (today.getHours() < 10 ? "0" + today.getHours() : today.getHours()),
+	curMinute = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes(),
+	curSeconds = today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds(),
+	curMeridiem = today.getHours() > 12 ? "PM" : "AM";
+    const currentDay = curMonth + " " + dayOfMonth + ", " + curYear;
 
+console.log(currentDay);
+
+console.log(`${dayOfMonth}`)
+ 
 console.log(`${curHour}:${curMinute}`);
+time.textContent = `${curHour}:${curMinute}`;
+curDate.textContent = `${curMonth} ${dayOfMonth}, ${curYear}`;
+console.log(`${curMonth} ${dayOfMonth}, ${curYear}`);
 	
-
 const successCallback = (position) => {
     
     const latitude = position.coords.latitude;
@@ -81,6 +97,7 @@ const successCallback = (position) => {
                 windSpeed.textContent = `${currentWindSpeed}kph`;
                 humidity.textContent = `${currentHumidity}%`;
                 tempC.textContent = `${currentTempC}`;
+
             })
 
     });
