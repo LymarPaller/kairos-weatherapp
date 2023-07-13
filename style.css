@@ -6,9 +6,9 @@
     padding: 0;;
 
     --background-color-day: #EAEAEA;
-    --widgetcolod-day: #FFFFFF;
+    --widgetcolor-day: #FFFFFF;
     --background-color-night: #383838;
-    --widgetcolod-night: #232323;
+    --widgetcolor-night: #232323;
     --font-color-day: #003854;
     --font-color-night: #FFFFFF;
 
@@ -47,7 +47,6 @@ body {
 
 .main-widgets-container {
     width: 85vw;
-    height: 80vh;
     margin-top: 10vh;
     background-color: var(--background-color-day);
 }
@@ -62,7 +61,6 @@ body {
 .navbar-toggler {
     margin-left: 1rem;
 }
-
 
 .navbar-ul {
     display: flex;
@@ -86,7 +84,6 @@ body {
     align-items: center;
 }
 
-
 .row h1 {
     padding-top: 0.1rem;
     font-size: .8rem;
@@ -108,8 +105,6 @@ body {
 }
 
 .status-widget-1 {
-    width: 50vw;
-    height: 30vh;
     margin: 1rem;
     display: flex;
     flex-direction: column;
@@ -117,9 +112,11 @@ body {
 }
 
 .status-widget-2 {
-    width: 50vw;
-    height: 30vh;
-    margin: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* WIDGET 1 ELEMENTS */
@@ -151,12 +148,98 @@ body {
     flex-direction: row;
 }
 
+.status-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center ;
+    margin: .6rem;
+}
 
+.status-div img {
+    width: 1.5rem;
+}
 
-@media screen and (min-width: 578px) {
+/* WIDGET 2 ELEMENTS */
+
+.image-container {
+    background-color: var(--widgetcolor-day);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 25px;
+    width: 11rem;
+    height: 13rem;
+}
+
+.image-container > img {
+    width: 7rem;
+    margin-top: 1rem;
+    pad: 1rem;
+}
+
+.image-container > h1 {
+    font-size: 1.5rem;
+    margin-top: .5rem;
+}
+
+.current-weather-details {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.status-div img {
+    width: 1.5rem;
+}
+
+.widget-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1rem;
+    width: 4rem;
+}
+
+.current-weather-details {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.widget-details p {
+    margin-bottom: 0;
+    text-align: left;
+    font-size: .7rem;
+    font-weight: bold;
+}
+
+/* FORECAST TAB */
+
+.forecast-widget-main {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.forecast-tab {
+    background-color: white;
+    border-radius: 10px;
+    width: 6rem;
+    height: 7rem;
+    margin: 1rem;
+}
+
+@media screen and (min-width: 573px) {
 
     .main-widgets-container {
-        width: 60vw;
+        width: fit-content;
         height: auto;
         overflow: hidden;
         margin-top: 10vh;
@@ -166,7 +249,6 @@ body {
     }
 
     #nav-bar-main {
-        height: 70vh;
         display: flex;
         flex-direction: column;
         justify-content: start;
@@ -188,9 +270,9 @@ body {
     
 
     .navbar {
-        background-color: var(--widgetcolod-day);
+        background-color: var(--widgetcolor-day);
         width: 15vw;
-        height: 70vh;
+        height: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -230,33 +312,31 @@ body {
 
     .weather-all-detail-div {
         background-color:blue;
-        display: flex;  
+        display: flex; 
+        width: 100%;
     }
 
     .weather-widget-main{
         display: flex;
-        justify-content: center;
-        width: 45vw;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
         margin-top: 1rem;
     }
 
 
     .status-widget-1 {
-        width: 20vw;
-        height: 45vh;
         margin: 0;
     }
     .status-widget-2 {
-        width: 20vw;
-        height: 45vh;
         margin: 0;
+        margin-top: 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     .image-container {
-        background-color: var(--widgetcolod-day);
+        background-color: var(--widgetcolor-day);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -277,11 +357,12 @@ body {
     }
 
     .forecast-widget-main {
-        margin-top: 0;
-
         display: flex;
-        justify-content: space-evenly;
+        flex-wrap: wrap;
         align-items: center;
+        margin-top: 0;
+        width: 100%;
+        height: fit-content;
     }
 
     .status-div{
@@ -301,15 +382,22 @@ body {
         flex-direction: column;
         justify-content: center;
         margin-left: 1rem;
-        width: 4rem;
+        width: 3.5rem;
     }
 
     .current-weather-details {
+        width: 20vw;
         margin-top: 1.5rem;
         display: flex;
-        justify-content: space-around;
+        flex-direction: row;
         flex-wrap: wrap;
+        justify-content: space-around;
     }
+
+   .weather-detail-row {
+    display: flex;
+    flex-direction: row;
+   }
 
     .widget-details p {
         margin-bottom: 0;
@@ -319,17 +407,21 @@ body {
     }
 
 
+    /* FORECAST TAB */
+
     .forecast-tab {
         background-color: white;
         border-radius: 10px;
         width: 5rem;
         height: 7rem;
         margin-top: 25px;
+        margin: 1rem;
     }
 
     main {
         display: flex;
         justify-content: center;
+        width: fit-content;
     }
 
 
