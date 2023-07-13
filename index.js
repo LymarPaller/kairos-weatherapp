@@ -18,6 +18,7 @@ const humidity = document.getElementById('chance-of-rain');
 const tempC = document.getElementById('temp-c');
 const time = document.getElementById('widget-time');
 const curDate = document.getElementById('widget-date');
+const day = document.getElementById('widget-day');
 
 // get postion coordinate for longitude and latitude 
 const today = new Date(),
@@ -33,15 +34,10 @@ const today = new Date(),
 	curMeridiem = today.getHours() > 12 ? "PM" : "AM";
     const currentDay = curMonth + " " + dayOfMonth + ", " + curYear;
 
-console.log(currentDay);
-
-console.log(`${dayOfMonth}`)
- 
-console.log(`${curHour}:${curMinute}`);
 time.textContent = `${curHour}:${curMinute}`;
 curDate.textContent = `${curMonth} ${dayOfMonth}, ${curYear}`;
-console.log(`${curMonth} ${dayOfMonth}, ${curYear}`);
-	
+day.textContent = `${dayOfWeek}`;
+
 const successCallback = (position) => {
     
     const latitude = position.coords.latitude;
