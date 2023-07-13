@@ -22,7 +22,7 @@ const successCallback = (position) => {
 
     .then((data) => {
         const location = data.location;
-        console.log(location.name)
+        console.log(location);
     });
 };
 
