@@ -30,8 +30,8 @@
                                 <input type="text" placeholder="Enter your location..">
                             </div>
                             <li class="main-city">
-                                <h1>Quezon City</h1> <!-- api location.name -->
-                                <p class="m-0">Philippines</p> <!-- api location.country -->
+                                <h1 id="first-tab-city"></h1> <!-- api location.name -->
+                                <p class="m-0" id="first-tab-state"></p> <!-- api location.state -->
                             </li>
                         </div>
                     </ul>
@@ -47,20 +47,20 @@
                         <p class="widget-date">July 07, 2023</p>
                         <h1 class="widget-day">Thursday</h1>
                         <div class="widget-temp">
-                            <span></span><p class="temp">30</p><span><p>°C</p></span> <!-- api current.temp_c -->
+                            <span></span><p class="temp" id="temp-c"></p><span><p>°C</p></span> <!-- api current.temp_c -->
                         </div>
                     </div>
                     <div class="status-widget-2">
-                        <div class="image-container">
-                            <img src="./photo/clearsky-morning.svg" alt=""> <!-- api current.condition.icon -->
-                            <h1>Sunny</h1> <!-- api current.condition.text -->
+                        <div class="image-container" id="current-weather-container">
+                            <img id="current-weather-img" src="./photo/clearsky-morning.svg" alt="">
+                            <h1 id="current-weather"></h1>
                         </div>
                         <div class="current-weather-details">
                             <div class="weather-detail-row">
                                 <div class="status-div">
                                     <img src="./photo/status-icon/windspeed.svg">
                                     <div class="widget-details">
-                                        <p class="chance-of-rain">3km/h</p> <!-- api current.wind_kph -->
+                                        <p id="wind-speed"></p> <!-- api current.wind_kph -->
                                         <p>Windspeed</p>
                                     </div>
                                 </div>
@@ -68,7 +68,7 @@
                                 <div class="status-div">
                                     <img src="./photo/status-icon/rainchance.svg">
                                     <div class="widget-details">
-                                        <p class="chance-of-rain">3%</p> <!-- api current.humidity disregard class name-->
+                                        <p id="chance-of-rain"></p> <!-- api current.humidity disregard class name-->
                                         <p>Humidity</p>
                                     </div>
                                 </div>
