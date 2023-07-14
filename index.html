@@ -26,8 +26,8 @@
                 <div class="collapse navbar-collapse" id="nav-bar-main">
                     <ul class="navbar-ul navbar-nav">
                         <div class="row">
-                            <div class="search-box">
-                                <input type="text" placeholder="Enter your location..">
+                            <div class="logo-kairos">
+                                <!-- <img src="" alt="kairos logo" class="logo"> -->
                             </div>
                             <li class="main-city">
                                 <h1 id="first-tab-city"></h1> <!-- api location.name -->
@@ -43,7 +43,10 @@
             <div class="weather-all-detail-div">
                 <div class="weather-widget-main">
                     <div class="status-widget-1">
-                        <h1 class="widget-time" id="widget-time"><span id="am-pm"></span></h1>
+                        <div class="time-format">
+                            <h1 class="widget-time" id="widget-time"></h1>
+                            <span id="am-pm" class="am-pm"></span> <!-- ALSO FIXED MERRIDIAN -->
+                        </div>
                         <p class="widget-date" id="widget-date"></p>
                         <h1 class="widget-day" id="widget-day"></h1>
                         <div class="widget-temp">
@@ -52,7 +55,7 @@
                     </div>
                     <div class="status-widget-2">
                         <div class="image-container" id="current-weather-container">
-                            <img id="current-weather-img" src="./photo/clearsky-morning.svg" alt="">
+                            <img id="current-weather-img" src="" alt="">
                             <h1 id="current-weather"></h1>
                         </div>
                         <div class="current-weather-details">
@@ -95,12 +98,46 @@
                 </div>
 
                 <div class="forecast-widget-main">
-                    <div class="forecast-tab"></div>
-                    <div class="forecast-tab"></div>
-                    <div class="forecast-tab"></div>
-                    <div class="forecast-tab"></div>
-                    <div class="forecast-tab"></div>
-                    <div class="forecast-tab"></div>
+                    <div class="forecast-tab">
+                        <div class="forecast-container">
+                            <img id="forecast-weather-img-a" src="" alt="">
+                            <h1 class="forecast-day" id="day-1"></h1>
+                        </div>
+                    </div>
+
+                    <div class="forecast-tab">
+                        <div class="forecast-container">
+                            <img id="forecast-weather-img-b" src="" alt="">
+                            <h1 class="forecast-day" id="day-2"></h1>
+                        </div>
+                    </div>
+
+                    <div class="forecast-tab">
+                        <div class="forecast-container">
+                            <img id="forecast-weather-img-c" src="" alt="">
+                            <h1 class="forecast-day" id="day-3"></h1>
+                        </div>
+                    </div>
+                    <div class="forecast-tab">
+                        <div class="forecast-container">
+                            <img id="forecast-weather-img-d" src="" alt="">
+                            <h1 class="forecast-day" id="day-4"></h1>
+                        </div>
+                    </div>
+
+                    <div class="forecast-tab">
+                        <div class="forecast-container">
+                            <img id="forecast-weather-img-e" src="" alt="">
+                            <h1 class="forecast-day" id="day-5"></h1>
+                        </div>
+                    </div>
+
+                    <div class="forecast-tab">
+                        <div class="forecast-container">
+                            <img id="forecast-weather-img-f" src="" alt="">
+                            <h1 class="forecast-day" id="day-6"></h1>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div></div>
