@@ -16,7 +16,9 @@ const currentWeatherContainer = document.getElementById('current-weather-contain
 const windSpeed = document.getElementById('wind-speed');
 const humidity = document.getElementById('chance-of-rain');
 const tempC = document.getElementById('temp-c');
-
+const time = document.getElementById('widget-time');
+const curDate = document.getElementById('widget-date');
+const day = document.getElementById('widget-day');
 
 // get postion coordinate for longitude and latitude 
 const today = new Date(),
@@ -32,8 +34,9 @@ const today = new Date(),
 	curMeridiem = today.getHours() > 12 ? "PM" : "AM";
     const currentDay = curMonth + " " + dayOfMonth + ", " + curYear;
 
-console.log(currentDay);
-	
+time.textContent = `${curHour}:${curMinute}`;
+curDate.textContent = `${curMonth} ${dayOfMonth}, ${curYear}`;
+day.textContent = `${dayOfWeek}`;
 
 const successCallback = (position) => {
     
@@ -90,6 +93,7 @@ const successCallback = (position) => {
                 windSpeed.textContent = `${currentWindSpeed}kph`;
                 humidity.textContent = `${currentHumidity}%`;
                 tempC.textContent = `${currentTempC}`;
+
             })
 
     });
