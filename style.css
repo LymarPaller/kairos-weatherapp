@@ -34,6 +34,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    transition: background-color 0.5s;
 }
 
 /* HEADER NAVBAR */
@@ -43,6 +44,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: rgb(10, 10, 10);
+    transition: background-color 0.5s;
 }
 
 .main-widgets-container {

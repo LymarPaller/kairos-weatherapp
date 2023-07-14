@@ -23,21 +23,21 @@ const amPm = document.getElementById('am-pm');
 
 // get postion coordinate for longitude and latitude 
 const today = new Date(),
-	weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
-	dayOfWeek = weekday[today.getDay()],
-	dayOfMonth = ( today.getDate() < 10) ? '0' + today.getDate() : today.getDate(),
-	months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'),
-	curMonth = months[today.getMonth()],
-	curYear = today.getFullYear(),
-	curHour = today.getHours() > 12 ? today.getHours() - 12 : (today.getHours() < 10 ? "0" + today.getHours() : today.getHours()),
-	convertHour = (curHour%12) || 12;  
-    curMinute = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes(),
-	curSeconds = today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds(),
+weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
+dayOfWeek = weekday[today.getDay()],
+dayOfMonth = ( today.getDate() < 10) ? '0' + today.getDate() : today.getDate(),
+months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'),
+curMonth = months[today.getMonth()],
+curYear = today.getFullYear(),
+curHour = today.getHours() > 12 ? today.getHours() - 12 : (today.getHours() < 10 ? "0" + today.getHours() : today.getHours()),
+convertHour = (curHour%12) || 12,
+curMinute = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes(),
+curSeconds = today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds(),
 
 curMeridiem = today.getHours() > 12 ? "PM" : "AM";
-  const currentDay = curMonth + " " + dayOfMonth + ", " + curYear;
+const currentDay = curMonth + " " + dayOfMonth + ", " + curYear;
 
-  console.log(`${curMeridiem}`);
+console.log(`${curMeridiem}`);
 
 time.textContent = `${curHour}:${curMinute}`;
 amPm.textContent = `${curMeridiem}`;
@@ -46,9 +46,26 @@ day.textContent = `${dayOfWeek}`;
 
 const successCallback = (position) => {
     
-    const latitude = position.coords.latitude;
-    const longitude = position.coords.longitude;
+const latitude = position.coords.latitude;
+const longitude = position.coords.longitude;
 
+function setBackground(){
+    var date = new Date();
+    var hours = date.getHours();
+
+    var body = document.body;
+    if (hours >= 6 && hours < 18){
+        document.body.style.backgroundImage = "url('./photo/background-day.jpg')"
+        console.log("day")
+    }
+    else {
+        document.body.style.backgroundImage = "url('./photo/background-night.jpg')"
+        console.log("night")
+    }
+}
+
+setBackground();
+setInterval(setBackground,60000);
     // fetch geoAPI and apply latitude and latitude to API URL
 
     fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=42207e457e3eb8b6df3dd8146f5bfc1b`)
