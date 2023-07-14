@@ -92,6 +92,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    word-wrap: break-word;
 }
 
 .row h1 {
