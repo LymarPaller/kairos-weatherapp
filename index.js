@@ -33,9 +33,8 @@ const today = new Date(),
 	convertHour = (curHour%12) || 12;  
     curMinute = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes(),
 	curSeconds = today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds(),
-
-curMeridiem = today.getHours() > 12 ? "PM" : "AM";
-  const currentDay = curMonth + " " + dayOfMonth + ", " + curYear;
+    curMeridiem = today.getHours() > 12 ? "PM" : "AM";
+    const currentDay = curMonth + " " + dayOfMonth + ", " + curYear;
 
   console.log(`${curMeridiem}`);
 
@@ -43,6 +42,8 @@ time.textContent = `${curHour}:${curMinute}`;
 amPm.textContent = `${curMeridiem}`;
 curDate.textContent = `${curMonth} ${dayOfMonth}, ${curYear}`;
 day.textContent = `${dayOfWeek}`;
+
+
 
 const successCallback = (position) => {
     

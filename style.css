@@ -262,9 +262,15 @@ body {
         flex-wrap: nowrap;
     }
 
-    .search-box {
+    .logo-kairos {
         display: flex;
-        justify-content: center;
+        justify-content: start;
+    }
+
+    .logo-kairos img {
+        width: 5vw;
+        margin-top: 1rem;
+        margin-left: 1rem;
     }
 
     .search-box input {
