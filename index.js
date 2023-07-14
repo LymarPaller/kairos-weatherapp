@@ -29,10 +29,8 @@ const fifthDay =  document.getElementById('fifth-day-forecast');
 const sixthDay =  document.getElementById('sixth-day-forecast');
 
 
-
 // get postion coordinate for longitude and latitude 
 const today = new Date(),
-<<<<<<< HEAD
 weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
 dayOfWeek = weekday[today.getDay()],
 dayOfMonth = ( today.getDate() < 10) ? '0' + today.getDate() : today.getDate(),
@@ -48,20 +46,6 @@ curMeridiem = today.getHours() > 12 ? "PM" : "AM";
 const currentDay = curMonth + " " + dayOfMonth + ", " + curYear;
 
 console.log(`${curMeridiem}`);
-=======
-	weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
-	dayOfWeek = weekday[today.getDay()],
-	dayOfMonth = ( today.getDate() < 10) ? '0' + today.getDate() : today.getDate(),
-	months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'),
-	curMonth = months[today.getMonth()],
-	curYear = today.getFullYear(),
-	curHour = today.getHours() > 12 ? today.getHours() - 12 : (today.getHours() < 10 ? "0" + today.getHours() : today.getHours()),
-	convertHour = (curHour%12) || 12;  
-    curMinute = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes(),
-	curSeconds = today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds(),
-    curMeridiem = today.getHours() > 12 ? "PM" : "AM";
-    const currentDay = curMonth + " " + dayOfMonth + ", " + curYear;
->>>>>>> 6d1f4209f777281f08d2578906d2bd9ca73a05c8
 
 time.textContent = `${curHour}:${curMinute}`;
 amPm.textContent = `${curMeridiem}`;
