@@ -94,6 +94,12 @@ body {
     align-items: center;
 }
 
+.generate-button button {
+    color: none;
+    background-color: white;
+    border: none;
+}
+
 .row h1 {
     padding-top: 0.1rem;
     font-size: .8rem;
@@ -309,14 +315,6 @@ body {
         justify-content: center;
         flex-direction: column;
     }
-
-    .navbar-ul li {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: center;
-    }
-
     .navbar-ul .row {
         display: flex;
         flex-wrap: nowrap;
@@ -335,6 +333,35 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+
+    #nav-container ul {
+        padding-left: 0;
+        height: 15vh;
+    }
+
+    #nav-container {
+        display: flex;
+        flex-direction: column;
+        padding-right: 0;
+        padding-left: 0;
+        margin-top: 0;
+        width: auto;
+    }
+
+    #nav-container li {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        height: 15vh;
+    }
+
+    #nav-container input {
+        width: 90%;
+        height: 2rem;
+        border: 0;
+        text-align: center;
+        margin-top: 0;
     }
 
     .row h1 {
