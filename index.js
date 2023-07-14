@@ -19,11 +19,20 @@ const tempC = document.getElementById('temp-c');
 
 
 // get postion coordinate for longitude and latitude 
-const date = new Date();
-curHour = date.getHours() > 12 ? date.getHours() - 12 : (date.getHours() < 10 ? "0" + date.getHours() : date.getHours()),
-curMinute = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes(),
+const today = new Date(),
+	weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
+	dayOfWeek = weekday[today.getDay()],
+	dayOfMonth = ( today.getDate() < 10) ? '0' + today.getDate() : today.getDate(),
+	months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'),
+	curMonth = months[today.getMonth()],
+	curYear = today.getFullYear(),
+	curHour = today.getHours() > 12 ? today.getHours() - 12 : (today.getHours() < 10 ? "0" + today.getHours() : today.getHours()),
+	curMinute = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes(),
+	curSeconds = today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds(),
+	curMeridiem = today.getHours() > 12 ? "PM" : "AM";
+    const currentDay = curMonth + " " + dayOfMonth + ", " + curYear;
 
-console.log(`${curHour}:${curMinute}`);
+console.log(currentDay);
 	
 
 const successCallback = (position) => {
