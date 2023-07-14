@@ -19,6 +19,7 @@ const tempC = document.getElementById('temp-c');
 const time = document.getElementById('widget-time');
 const curDate = document.getElementById('widget-date');
 const day = document.getElementById('widget-day');
+const amPm = document.getElementById('am-pm');
 
 // get postion coordinate for longitude and latitude 
 const today = new Date(),
@@ -29,12 +30,17 @@ const today = new Date(),
 	curMonth = months[today.getMonth()],
 	curYear = today.getFullYear(),
 	curHour = today.getHours() > 12 ? today.getHours() - 12 : (today.getHours() < 10 ? "0" + today.getHours() : today.getHours()),
-	curMinute = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes(),
+	convertHour = (curHour%12) || 12;  
+    curMinute = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes(),
 	curSeconds = today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds(),
-	curMeridiem = today.getHours() > 12 ? "PM" : "AM";
-    const currentDay = curMonth + " " + dayOfMonth + ", " + curYear;
+
+curMeridiem = today.getHours() > 12 ? "PM" : "AM";
+  const currentDay = curMonth + " " + dayOfMonth + ", " + curYear;
+
+  console.log(`${curMeridiem}`);
 
 time.textContent = `${curHour}:${curMinute}`;
+amPm.textContent = `${curMeridiem}`;
 curDate.textContent = `${curMonth} ${dayOfMonth}, ${curYear}`;
 day.textContent = `${dayOfWeek}`;
 
