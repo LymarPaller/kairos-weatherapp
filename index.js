@@ -33,8 +33,11 @@ const today = new Date(),
 	curSeconds = today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds(),
 	curMeridiem = today.getHours() > 12 ? "PM" : "AM";
     const currentDay = curMonth + " " + dayOfMonth + ", " + curYear;
+    
+    getHours = (curHour % 12) || 12;
+    
 
-time.textContent = `${curHour}:${curMinute}`;
+time.textContent = `${getHours}:${curMinute}`;
 curDate.textContent = `${curMonth} ${dayOfMonth}, ${curYear}`;
 day.textContent = `${dayOfWeek}`;
 
