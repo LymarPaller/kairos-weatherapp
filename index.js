@@ -131,16 +131,13 @@ setInterval(setBackground,60000);
                 temp.textContent = `${currentTempC}`;
                 function displayTemperature() {
                     var tempElement = document.getElementById("setForC");
-                    var togglebutt = document.getElementById("togglebutton");
                     if(isCelsius){
                         tempElement.textContent = "°C";
                         temp.textContent = `${currentTempC}`;
-                        togglebutt.textContent = "to °F"
                     }
                     else{
                         tempElement.textContent = "°F";
                         temp.textContent = `${currentTempF}`;
-                        togglebutt.textContent = "to °C"
                     }
                 }
 
