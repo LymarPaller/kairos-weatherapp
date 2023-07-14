@@ -37,6 +37,14 @@ body {
     transition: background-color 0.5s;
 }
 
+.cfbutton {
+background-color: var(--background-color-day);
+border: none;
+text-align: center;
+display: inline;
+padding: 10px 20px;
+}
+
 /* HEADER NAVBAR */
 
 body {
@@ -161,6 +169,7 @@ body {
     font-size: 2rem;
     display: flex;
     flex-direction: row;
+    cursor: pointer;
 }
 
 .status-div{

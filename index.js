@@ -15,7 +15,7 @@ const currentWeather = document.getElementById('current-weather');
 const currentWeatherContainer = document.getElementById('current-weather-container');
 const windSpeed = document.getElementById('wind-speed');
 const humidity = document.getElementById('chance-of-rain');
-const tempC = document.getElementById('temp-c');
+const temp = document.getElementById('temp_set');
 const time = document.getElementById('widget-time');
 const curDate = document.getElementById('widget-date');
 const day = document.getElementById('widget-day');
@@ -65,12 +65,12 @@ function setBackground(){
 
     var body = document.body;
     if (hours >= 6 && hours < 18){
-        document.body.style.backgroundImage = "url('./photo/background-day.jpg')"
-        console.log("day")
+        document.body.style.backgroundImage = "url('./photo/background-day.jpg')";
+        console.log("day");
     }
     else {
-        document.body.style.backgroundImage = "url('./photo/background-night.jpg')"
-        console.log("night")
+        document.body.style.backgroundImage = "url('./photo/background-night.jpg')";
+        console.log("night");
     }
 }
 
@@ -122,11 +122,34 @@ setInterval(setBackground,60000);
                 const currentWindSpeed = current.wind_kph; //
                 const currentHumidity = current.humidity;
                 const currentTempC = current.temp_c;
+                const currentTempF = current.temp_f;
 
                 currentWeather.textContent = `${currentConditionText}`;
                 windSpeed.textContent = `${currentWindSpeed}kph`;
                 humidity.textContent = `${currentHumidity}%`;
-                tempC.textContent = `${currentTempC}`;
+                var isCelsius = true;
+                temp.textContent = `${currentTempC}`;
+                function displayTemperature() {
+                    var tempElement = document.getElementById("setForC");
+                    var togglebutt = document.getElementById("togglebutton");
+                    if(isCelsius){
+                        tempElement.textContent = "°C";
+                        temp.textContent = `${currentTempC}`;
+                        togglebutt.textContent = "to °F"
+                    }
+                    else{
+                        tempElement.textContent = "°F";
+                        temp.textContent = `${currentTempF}`;
+                        togglebutt.textContent = "to °C"
+                    }
+                }
+
+                function toggleUnits(){
+                    isCelsius = !isCelsius;
+                    displayTemperature();
+                }
+
+                document.getElementById("widget-temp").addEventListener("click",toggleUnits);
 
                 //FORECAST
                 const forecastDays = [];
@@ -141,6 +164,7 @@ setInterval(setBackground,60000);
 
                 const dayElement = document.getElementById(`day-${i}`);
                 dayElement.textContent = dayOfWeek;
+                
                 }
 
                 //FORECAST WEATHER
