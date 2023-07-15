@@ -76,6 +76,37 @@ function setBackground(){
 
 setBackground();
 setInterval(setBackground,60000);
+
+var listItem = document.querySelectorAll('#listSelector li');
+
+listItem.forEach(function(item){
+    item.addEventListener('click', function(event){
+        highlightListItem(event.target);
+    });
+});
+
+function highlightListItem(clickedItem){
+    listItem.forEach(function(item){
+        item.style.backgroundColor = '';
+        item.querySelector('h1').style.backgroundColor=''
+        item.querySelector('p').style.backgroundColor=''
+    });
+
+    clickedItem.style.backgroundColor = '#EAEAEA';
+    clickedItem.querySelector('h1').style.backgroundColor='#EAEAEA';
+    clickedItem.querySelector('p').style.backgroundColor='#EAEAEA';
+    listItem.forEach(function(item){
+        if(item !== clickedItem){
+            item.style.filter = 'blur(1px)';
+            item.querySelector('p').style.backgroundColor=''
+        }
+        else{
+            item.style.filter='';
+            item.querySelector('p').style.backgroundColor=''
+        }
+    });
+}
+
     // fetch geoAPI and apply latitude and latitude to API URL
 
     fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=42207e457e3eb8b6df3dd8146f5bfc1b`)
