@@ -82,7 +82,7 @@ body {
 .navbar-ul li {
     
     list-style: none;
-    height: 5rem;
+    height: auto;
     width: 6rem;
     background-color: white;
     margin: .3rem;
@@ -309,7 +309,7 @@ body {
 
     .navbar {
         background-color: var(--widgetcolor-day);
-        width: 15vw;
+        width: 20vw;
         height: 100%;
         display: flex;
         flex-wrap: wrap;
@@ -325,8 +325,7 @@ body {
 
     .navbar-ul li {
         background-color: white;
-        height: 5rem;
-        width: 15vw;
+        width: 20vw;
         margin: .5rem;
         padding-top: 1rem;
         border-radius: 0;
@@ -357,16 +356,20 @@ body {
         height: 15vh;
     }
 
-    #nav-container input {
-        width: 90%;
-        height: 2rem;
+    .row input {
+        width: 100%;
+        height: auto;
         border: 0;
         text-align: center;
         margin-top: 0;
+        font-size: 1.4rem;
+        font-weight: 600;
+        font-family: var(--main-font);
     }
 
     .row h1 {
         font-size: 1.5rem;
+        
     };
 
     .weather-all-detail-div {

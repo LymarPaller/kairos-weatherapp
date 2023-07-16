@@ -525,38 +525,25 @@ const errorCallback = (err) => {
     
 };
 
-// ADDS BUTTON THAT CREATES NEW NAV LINK WHICH CONTAINS A SEARCH BAR
-// TEMPORARY DISABLE ADD NEW CITY BUTTON
+// REMADE THE ADD CITY BUTTON IT CAN SHOW 3 NAVBAR AT A TIME
 
-// const navContent = ["New City"];
-// let ulCounter = 1;
-
-// function generateNav() {
-//   const navContainer = document.getElementById("nav-container");
-
-//   // Create a new nav-ul element
-//   const navUl = document.createElement("ul");
-//   navUl.id = `navUl${ulCounter}`;
-
-//   // Add content to the nav-ul
-//   navContent.forEach(item => {
-//     const li = document.createElement("li");
-
-//     // Create the search box
-//     const searchBox = document.createElement("input");
-//     searchBox.type = "text";
-//     searchBox.placeholder = "Enter City";
-//     searchBox.className = "search-box"
-//     li.appendChild(searchBox);
-
-//     navUl.appendChild(li);
-//   });
-
-//   // Append the nav-ul to the navContainer
-//   navContainer.appendChild(navUl);
-
-//   ulCounter++;
-// }
-
-// const generateButton = document.getElementById("generateButton");
-// generateButton.addEventListener("click", generateNav);
+document.addEventListener("DOMContentLoaded", function() {
+    const cities = document.querySelectorAll(".second-city, .third-city, .fourth-city");
+    const closeButtons = document.querySelectorAll(".close-button");
+    const showCityButton = document.getElementById("show-city-button");
+  
+    closeButtons.forEach(function(closeButton) {
+      closeButton.addEventListener("click", function(event) {
+        const listItem = event.target.parentElement;
+        listItem.style.display = "none";
+      });
+    });
+  
+    showCityButton.addEventListener("click", function() {
+      // Find the first hidden city and show it
+      const hiddenCity = [...cities].find(city => city.style.display === "none");
+      if (hiddenCity) {
+        hiddenCity.style.display = "list-item";
+      }
+    });
+  });
