@@ -92,8 +92,8 @@ listItem.forEach(function(item){
 function highlightListItem(clickedItem){
     listItem.forEach(function(item){
         item.style.backgroundColor = '';
-        item.querySelector('h1').style.backgroundColor=''
-        item.querySelector('p').style.backgroundColor=''
+        item.querySelector('h1').style.backgroundColor='';
+        item.querySelector('p').style.backgroundColor='';
     });
 
     clickedItem.style.backgroundColor = '#EAEAEA';
