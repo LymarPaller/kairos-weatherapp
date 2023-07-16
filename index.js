@@ -28,8 +28,8 @@ const fourthDay =  document.getElementById('fourth-day-forecast');
 const fifthDay =  document.getElementById('fifth-day-forecast');
 const sixthDay =  document.getElementById('sixth-day-forecast');
 
+// sets current time and current date
 
-// get postion coordinate for longitude and latitude 
 const today = new Date(),
 weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
 dayOfWeek = weekday[today.getDay()],
@@ -52,12 +52,14 @@ amPm.textContent = `${curMeridiem}`;
 curDate.textContent = `${curMonth} ${dayOfMonth}, ${curYear}`;
 day.textContent = `${dayOfWeek}`;
 
-
+// get postion coordinate for longitude and latitude 
 
 const successCallback = (position) => {
     
 const latitude = position.coords.latitude;
 const longitude = position.coords.longitude;
+
+// sets night and day background function
 
 function setBackground(){
     var date = new Date();
@@ -85,6 +87,8 @@ listItem.forEach(function(item){
     });
 });
 
+// highlight nav links in nav bar
+
 function highlightListItem(clickedItem){
     listItem.forEach(function(item){
         item.style.backgroundColor = '';
@@ -107,9 +111,9 @@ function highlightListItem(clickedItem){
     });
 }
 
-    // fetch geoAPI and apply latitude and latitude to API URL
+// fetch geoAPI and apply latitude and latitude to API URL
 
-    fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=42207e457e3eb8b6df3dd8146f5bfc1b`)
+fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=42207e457e3eb8b6df3dd8146f5bfc1b`)
     .then((result) => {
         if (result.ok) {
             return result.json();
@@ -195,7 +199,7 @@ function highlightListItem(clickedItem){
                 
                 }
 
-                //FORECAST WEATHER
+                // STORES FORECAST CONDITION TO CORRESPONDING DAY
                 
                 const weatherTextA = data.forecast.forecastday[0].day.condition.text;
                 const weatherTextB = data.forecast.forecastday[1].day.condition.text;
@@ -204,6 +208,8 @@ function highlightListItem(clickedItem){
                 const weatherTextE = data.forecast.forecastday[4].day.condition.text;
                 const weatherTextF = data.forecast.forecastday[5].day.condition.text;
 
+                // STORE VARIABLE NAME FROM HTML IMG ID
+
                 const forecastA = document.getElementById('forecast-weather-img-a');
                 const forecastB = document.getElementById('forecast-weather-img-b');
                 const forecastC = document.getElementById('forecast-weather-img-c');
@@ -211,18 +217,20 @@ function highlightListItem(clickedItem){
                 const forecastE = document.getElementById('forecast-weather-img-e');
                 const forecastF = document.getElementById('forecast-weather-img-f');
 
+                // SETS IMAGE SOURCE FOR EACH FORECAST
+
                 const imageSrcForecastA = setWeatherImage(weatherTextA);
                 forecastA.src = imageSrcForecastA;
                 const imageSrcForecastB = setWeatherImage(weatherTextB);
                 forecastB.src = imageSrcForecastB;
-                // const imageSrcForecast = setWeatherImage(weatherTextA);
-                // forecastC.src = imageSrcForecast;
-                // const imageSrcForecast = setWeatherImage(weatherTextA);
-                // forecastD.src = imageSrcForecast;
-                // const imageSrcForecast = setWeatherImage(weatherTextA);
-                // forecastE.src = imageSrcForecast;
-                // const imageSrcForecast = setWeatherImage(weatherTextA);
-                // forecastF.src = imageSrcForecast;
+                const imageSrcForecastC = setWeatherImage(weatherTextC);
+                forecastC.src = imageSrcForecastC;
+                const imageSrcForecastD = setWeatherImage(weatherTextD);
+                forecastD.src = imageSrcForecastD;
+                const imageSrcForecastE = setWeatherImage(weatherTextE);
+                forecastE.src = imageSrcForecastE;
+                const imageSrcForecastF = setWeatherImage(weatherTextF);
+                forecastF.src = imageSrcForecastF;
 
                 //SET WEATHERFORECAST IMAGE FOR FORECAST A
                 function setWeatherImage(weatherText) {
@@ -302,14 +310,167 @@ function highlightListItem(clickedItem){
                     return imageSrcForecastB;
                     }
 
-            
+                //SET WEATHERFORECAST IMAGE FOR FORECAST C
+                function setWeatherImage(weatherText) {
+                    let lowercaseConditionText = weatherText.toLowerCase();
+                    let imageSrcForecastC = '';
+    
+                    if (lowercaseConditionText.includes('sunny')) {
+                        imageSrcForecastC = './photo/weather-images/weather-clear-day.svg';
+                    } else if (lowercaseConditionText.includes('clear')) {
+                        imageSrcForecastC = './photo/weather-images/weather-clear-night.svg';
+                    } else if (lowercaseConditionText.includes('cloudy')) {
+                        imageSrcForecastC = './photo/weather-images/weather-cloudy.svg';
+                    } else if (lowercaseConditionText.includes('overcast')) {
+                        imageSrcForecastC = './photo/weather-images/weather-overcast-day.svg';
+                    } else if (lowercaseConditionText.includes('mist') || lowercaseConditionText.includes('fog')) {
+                        imageSrcForecastC = './photo/weather-images/weather-mist-fog.svg';
+                    } else if (lowercaseConditionText.includes('snow') && lowercaseConditionText.includes('thunder')) {
+                        imageSrcForecastC = './photo/weather-images/weather-snow-thunder.svg';
+                    } else if (lowercaseConditionText.includes('rain') && lowercaseConditionText.includes('thunder')) {
+                        imageSrcForecastC = './photo/weather-images/weather-storm-thunder.svg';
+                    } else if (lowercaseConditionText.includes('thundery')) {
+                        imageSrcForecastC = './photo/weather-images/weather-storm-thunder.svg';
+                    } else if (
+                        lowercaseConditionText.includes('rain') ||
+                        lowercaseConditionText.includes('drizzle') ||
+                        lowercaseConditionText.includes('overcast')
+                    ) {
+                        imageSrcForecastC = './photo/weather-images/weather-rain.svg';
+                    } else if (
+                        lowercaseConditionText.includes('snow') ||
+                        lowercaseConditionText.includes('blizzard') ||
+                        lowercaseConditionText.includes('sleet') ||
+                        lowercaseConditionText.includes('ice')
+                    ) {
+                        imageSrcForecastC = './photo/weather-images/weather-snow.svg';
+                    }
+    
+                    return imageSrcForecastC;
+                    }
+
+                //SET WEATHERFORECAST IMAGE FOR FORECAST D
+                function setWeatherImage(weatherText) {
+                    let lowercaseConditionText = weatherText.toLowerCase();
+                    let imageSrcForecastD = '';
+    
+                    if (lowercaseConditionText.includes('sunny')) {
+                        imageSrcForecastD = './photo/weather-images/weather-clear-day.svg';
+                    } else if (lowercaseConditionText.includes('clear')) {
+                        imageSrcForecastD = './photo/weather-images/weather-clear-night.svg';
+                    } else if (lowercaseConditionText.includes('cloudy')) {
+                        imageSrcForecastD = './photo/weather-images/weather-cloudy.svg';
+                    } else if (lowercaseConditionText.includes('overcast')) {
+                        imageSrcForecastD = './photo/weather-images/weather-overcast-day.svg';
+                    } else if (lowercaseConditionText.includes('mist') || lowercaseConditionText.includes('fog')) {
+                        imageSrcForecastD = './photo/weather-images/weather-mist-fog.svg';
+                    } else if (lowercaseConditionText.includes('snow') && lowercaseConditionText.includes('thunder')) {
+                        imageSrcForecastD = './photo/weather-images/weather-snow-thunder.svg';
+                    } else if (lowercaseConditionText.includes('rain') && lowercaseConditionText.includes('thunder')) {
+                        imageSrcForecastD = './photo/weather-images/weather-storm-thunder.svg';
+                    } else if (lowercaseConditionText.includes('thundery')) {
+                        imageSrcForecastD = './photo/weather-images/weather-storm-thunder.svg';
+                    } else if (
+                        lowercaseConditionText.includes('rain') ||
+                        lowercaseConditionText.includes('drizzle') ||
+                        lowercaseConditionText.includes('overcast')
+                    ) {
+                        imageSrcForecastD = './photo/weather-images/weather-rain.svg';
+                    } else if (
+                        lowercaseConditionText.includes('snow') ||
+                        lowercaseConditionText.includes('blizzard') ||
+                        lowercaseConditionText.includes('sleet') ||
+                        lowercaseConditionText.includes('ice')
+                    ) {
+                        imageSrcForecastD = './photo/weather-images/weather-snow.svg';
+                    }
+    
+                    return imageSrcForecastD;
+                    }
+
+                //SET WEATHERFORECAST IMAGE FOR FORECAST E
+                function setWeatherImage(weatherText) {
+                    let lowercaseConditionText = weatherText.toLowerCase();
+                    let imageSrcForecastE = '';
+    
+                    if (lowercaseConditionText.includes('sunny')) {
+                        imageSrcForecastE = './photo/weather-images/weather-clear-day.svg';
+                    } else if (lowercaseConditionText.includes('clear')) {
+                        imageSrcForecastE = './photo/weather-images/weather-clear-night.svg';
+                    } else if (lowercaseConditionText.includes('cloudy')) {
+                        imageSrcForecastE = './photo/weather-images/weather-cloudy.svg';
+                    } else if (lowercaseConditionText.includes('overcast')) {
+                        imageSrcForecastE = './photo/weather-images/weather-overcast-day.svg';
+                    } else if (lowercaseConditionText.includes('mist') || lowercaseConditionText.includes('fog')) {
+                        imageSrcForecastE = './photo/weather-images/weather-mist-fog.svg';
+                    } else if (lowercaseConditionText.includes('snow') && lowercaseConditionText.includes('thunder')) {
+                        imageSrcForecastE = './photo/weather-images/weather-snow-thunder.svg';
+                    } else if (lowercaseConditionText.includes('rain') && lowercaseConditionText.includes('thunder')) {
+                        imageSrcForecastE = './photo/weather-images/weather-storm-thunder.svg';
+                    } else if (lowercaseConditionText.includes('thundery')) {
+                        imageSrcForecastE = './photo/weather-images/weather-storm-thunder.svg';
+                    } else if (
+                        lowercaseConditionText.includes('rain') ||
+                        lowercaseConditionText.includes('drizzle') ||
+                        lowercaseConditionText.includes('overcast')
+                    ) {
+                        imageSrcForecastE = './photo/weather-images/weather-rain.svg';
+                    } else if (
+                        lowercaseConditionText.includes('snow') ||
+                        lowercaseConditionText.includes('blizzard') ||
+                        lowercaseConditionText.includes('sleet') ||
+                        lowercaseConditionText.includes('ice')
+                    ) {
+                        imageSrcForecastE = './photo/weather-images/weather-snow.svg';
+                    }
+    
+                    return imageSrcForecastE;
+                    }
+
+                //SET WEATHERFORECAST IMAGE FOR FORECAST F
+                function setWeatherImage(weatherText) {
+                    let lowercaseConditionText = weatherText.toLowerCase();
+                    let imageSrcForecastF = '';
+    
+                    if (lowercaseConditionText.includes('sunny')) {
+                        imageSrcForecastF = './photo/weather-images/weather-clear-day.svg';
+                    } else if (lowercaseConditionText.includes('clear')) {
+                        imageSrcForecastF = './photo/weather-images/weather-clear-night.svg';
+                    } else if (lowercaseConditionText.includes('cloudy')) {
+                        imageSrcForecastF = './photo/weather-images/weather-cloudy.svg';
+                    } else if (lowercaseConditionText.includes('overcast')) {
+                        imageSrcForecastF = './photo/weather-images/weather-overcast-day.svg';
+                    } else if (lowercaseConditionText.includes('mist') || lowercaseConditionText.includes('fog')) {
+                        imageSrcForecastF = './photo/weather-images/weather-mist-fog.svg';
+                    } else if (lowercaseConditionText.includes('snow') && lowercaseConditionText.includes('thunder')) {
+                        imageSrcForecastF = './photo/weather-images/weather-snow-thunder.svg';
+                    } else if (lowercaseConditionText.includes('rain') && lowercaseConditionText.includes('thunder')) {
+                        imageSrcForecastF = './photo/weather-images/weather-storm-thunder.svg';
+                    } else if (lowercaseConditionText.includes('thundery')) {
+                        imageSrcForecastF = './photo/weather-images/weather-storm-thunder.svg';
+                    } else if (
+                        lowercaseConditionText.includes('rain') ||
+                        lowercaseConditionText.includes('drizzle') ||
+                        lowercaseConditionText.includes('overcast')
+                    ) {
+                        imageSrcForecastF = './photo/weather-images/weather-rain.svg';
+                    } else if (
+                        lowercaseConditionText.includes('snow') ||
+                        lowercaseConditionText.includes('blizzard') ||
+                        lowercaseConditionText.includes('sleet') ||
+                        lowercaseConditionText.includes('ice')
+                    ) {
+                        imageSrcForecastF = './photo/weather-images/weather-snow.svg';
+                    }
+    
+                    return imageSrcForecastF;
+                    }
+
                 // SELECT IMAGE FOR CURRENT WEATHER
                 
                 const imageSrc = setCurrentWeatherImage(currentConditionText);
                 weatherImageSrc.src = imageSrc;
             
-
-
                 function setCurrentWeatherImage(currentConditionText) {
                     
                     let lowercaseConditionText = currentConditionText.toLowerCase();
@@ -363,6 +524,8 @@ const errorCallback = (err) => {
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
     
 };
+
+// ADDS BUTTON THAT CREATES NEW NAV LINK WHICH CONTAINS A SEARCH BAR
 
 const navContent = ["New City"];
 let ulCounter = 1;
