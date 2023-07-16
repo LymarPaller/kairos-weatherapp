@@ -476,18 +476,25 @@ body {
         margin-top: 25px;
         margin: 1rem;
         display: flex;
-        flex-direction: column;
         justify-content: center;
+
+    }
+
+    .forecast-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         align-items: center;
     }
 
     .forecast-day {
         font-size: .6rem;
         text-align: center;
-        margin-top: 1rem;
+        margin-top: 2rem;
     }
 
     .forecast-container > img {
+        margin-top: 1rem;
         width: 3rem;
     }
 
