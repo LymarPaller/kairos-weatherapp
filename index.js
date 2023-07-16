@@ -526,36 +526,37 @@ const errorCallback = (err) => {
 };
 
 // ADDS BUTTON THAT CREATES NEW NAV LINK WHICH CONTAINS A SEARCH BAR
+// TEMPORARY DISABLE ADD NEW CITY BUTTON
 
-const navContent = ["New City"];
-let ulCounter = 1;
+// const navContent = ["New City"];
+// let ulCounter = 1;
 
-function generateNav() {
-  const navContainer = document.getElementById("nav-container");
+// function generateNav() {
+//   const navContainer = document.getElementById("nav-container");
 
-  // Create a new nav-ul element
-  const navUl = document.createElement("ul");
-  navUl.id = `navUl${ulCounter}`;
+//   // Create a new nav-ul element
+//   const navUl = document.createElement("ul");
+//   navUl.id = `navUl${ulCounter}`;
 
-  // Add content to the nav-ul
-  navContent.forEach(item => {
-    const li = document.createElement("li");
+//   // Add content to the nav-ul
+//   navContent.forEach(item => {
+//     const li = document.createElement("li");
 
-    // Create the search box
-    const searchBox = document.createElement("input");
-    searchBox.type = "text";
-    searchBox.placeholder = "Enter City";
-    searchBox.className = "search-box"
-    li.appendChild(searchBox);
+//     // Create the search box
+//     const searchBox = document.createElement("input");
+//     searchBox.type = "text";
+//     searchBox.placeholder = "Enter City";
+//     searchBox.className = "search-box"
+//     li.appendChild(searchBox);
 
-    navUl.appendChild(li);
-  });
+//     navUl.appendChild(li);
+//   });
 
-  // Append the nav-ul to the navContainer
-  navContainer.appendChild(navUl);
+//   // Append the nav-ul to the navContainer
+//   navContainer.appendChild(navUl);
 
-  ulCounter++;
-}
+//   ulCounter++;
+// }
 
-const generateButton = document.getElementById("generateButton");
-generateButton.addEventListener("click", generateNav);
+// const generateButton = document.getElementById("generateButton");
+// generateButton.addEventListener("click", generateNav);
