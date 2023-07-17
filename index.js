@@ -1023,10 +1023,10 @@ const getCityName = () => {
 };
 
 const inputElement = document.getElementById('first-search-box');
-inputElement.addEventListener('keypress', (event) => {
-  if (event.keyCode === 13) {
+inputElement.addEventListener('input', () => {
+
     getCityName();
-  }
+
 });
 
 // set variables for 3rd city div
@@ -1404,10 +1404,10 @@ const getCityName2 = () => {
 };
 
 const inputElement2 = document.getElementById('second-search-box');
-inputElement2.addEventListener('keypress', (event) => {
-  if (event.keyCode === 13) {
+inputElement2.addEventListener('input', () => {
+
     getCityName2();
-  }
+  
 });
 
 // set variables for 4th city div
@@ -1547,10 +1547,10 @@ const getCityName3 = () => {
             const curMeridiem = localTime.getHours() >= 12 ? "PM" : "AM";
             const currentDay = curMonth + " " + dayOfMonth + ", " + curYear;
 
-            thirdCurrentTime.textContent = `${curHour}:${curMinute}`;
-            thirdtAMPM.textContent = `${curMeridiem}`;
-            thirdDate.textContent = `${curMonth} ${dayOfMonth}, ${curYear}`;
-            thirdCurrentDay.textContent = `${dayOfWeek}`;
+            fourthCurrentTime.textContent = `${curHour}:${curMinute}`;
+            fourthtAMPM.textContent = `${curMeridiem}`;
+            fourthDate.textContent = `${curMonth} ${dayOfMonth}, ${curYear}`;
+            fourthCurrentDay.textContent = `${dayOfWeek}`;
             
             //SET WEATHERFORECAST IMAGE FOR FORECAST A
             function setWeatherImage(weatherText) {
@@ -1784,10 +1784,10 @@ const getCityName3 = () => {
 };
 
 const inputElement3 = document.getElementById('third-search-box');
-inputElement3.addEventListener('keypress', (event) => {
-  if (event.keyCode === 13) {
+inputElement3.addEventListener('input', () => {
+
     getCityName3();
-  }
+
 });
 
 
