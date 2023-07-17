@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kairos | Weather App</title>
-    <link rel="icon" type="image/x-icon" href="./photo/kairo-logo.ico">
+    <link rel="icon" type="image/x-icon" href="./photo/kairos-logo.png">
 
     <!-- FONT AWESOME LINK -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -16,6 +16,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
+    <div class="logo-container">
+        <img src="./photo/kairos-logo.png" alt="" class="logo">
+        <div class="title-container">
+            <h1>Kairos</h1>
+            <p>Weather App</p>
+        </div>
+    </div>
     <div class="main-widgets-container">
         <!-- NAVBAR ULs -->
         <header>
@@ -26,21 +33,21 @@
                 <div class="collapse navbar-collapse" id="nav-bar-main">
                     <ul id = "listSelector" class="navbar-ul navbar-nav">
                         <div class="row">
-                            <li class="main-city" id="main-city-link">
+                            <li class="main-city bg-color col-6" id="main-city-link">
                                     <h1 id="first-tab-city">City</h1>
                                     <p class="m-0" id="first-tab-state">State</p>
                             </li>
-                            <li class="second-city" style="display:none;" id="city-one">
+                            <li class="second-city bg-color col-6" style="display:none;" id="city-one">
                                     <input type="text" placeholder="City Name.." class="search-box" id="first-search-box">
                                     <p class="m-0" id="second-tab-state">Country</p>
                                     <button class="close-button">Close</button>
                             </li>
-                            <li class="third-city" style="display:none;" id="city-two">
-                                    <input type="text" placeholder="City Name.." class="search-box" id="second-search-box">
+                            <li class="third-city bg-color col-6" style="display:none;" id="city-two">
+                                    <input type="text" placeholder="City Name.." class="search-box " id="second-search-box">
                                     <p class="m-0" id="third-tab-state">Country</p>
                                     <button class="close-button">Close</button>
                             </li>
-                            <li class="fourth-city" style="display:none;" id="city-three">
+                            <li class="fourth-city bg-color col-6" style="display:none;" id="city-three">
                                     <input type="text" placeholder="City Name.." class="search-box" id="third-search-box">
                                     <p class="m-0" id="fourth-tab-state">Country</p>
                                     <button class="close-button">Close</button>
@@ -162,7 +169,7 @@
                 <div class="weather-widget-main">
                     <div class="status-widget-1">
                         <div class="time-format">
-                            <h1 class="widget-time" id="widget-time-second">01:00</h1>
+                            <h1 class="widget-time" id="widget-time-second">00:00</h1>
                             <span id="am-pm-second" class="am-pm">PM</span> <!-- ALSO FIXED MERRIDIAN -->
                         </div>
                         <p class="widget-date" id="widget-date-second">July 01, 2023</p>
@@ -174,14 +181,14 @@
                     <div class="status-widget-2">
                         <div class="image-container" id="current-weather-container-second">
                             <img id="current-weather-img-second" src="" alt="">
-                            <h1 id="current-weather-second"></h1>
+                            <h1 id="current-weather-second">Please enter your City</h1>
                         </div>
                         <div class="current-weather-details">
                             <div class="weather-detail-row">
                                 <div class="status-div">
                                     <img src="./photo/status-icon/windspeed.svg">
                                     <div class="widget-details">
-                                        <p id="wind-speed-second"></p> <!-- api current.wind_kph -->
+                                        <p id="wind-speed-second">0kph</p> <!-- api current.wind_kph -->
                                         <p>Windspeed</p>
                                     </div>
                                 </div>
@@ -189,7 +196,7 @@
                                 <div class="status-div">
                                     <img src="./photo/status-icon/rainchance.svg">
                                     <div class="widget-details">
-                                        <p id="chance-of-rain-second"></p> <!-- api current.humidity disregard class name-->
+                                        <p id="chance-of-rain-second">0%</p> <!-- api current.humidity disregard class name-->
                                         <p>Humidity</p>
                                     </div>
                                 </div>
@@ -264,7 +271,7 @@
                 <div class="weather-widget-main">
                     <div class="status-widget-1">
                         <div class="time-format">
-                            <h1 class="widget-time" id="widget-time-third">01:00</h1>
+                            <h1 class="widget-time" id="widget-time-third">00:00</h1>
                             <span id="am-pm-third" class="am-pm">PM</span> <!-- ALSO FIXED MERRIDIAN -->
                         </div>
                         <p class="widget-date" id="widget-date-third">July 01, 2023</p>
@@ -283,7 +290,7 @@
                                 <div class="status-div">
                                     <img src="./photo/status-icon/windspeed.svg">
                                     <div class="widget-details">
-                                        <p id="wind-speed-third"></p> <!-- api current.wind_kph -->
+                                        <p id="wind-speed-third">0kph</p> <!-- api current.wind_kph -->
                                         <p>Windspeed</p>
                                     </div>
                                 </div>
@@ -291,7 +298,7 @@
                                 <div class="status-div">
                                     <img src="./photo/status-icon/rainchance.svg">
                                     <div class="widget-details">
-                                        <p id="chance-of-rain-third"></p> <!-- api current.humidity disregard class name-->
+                                        <p id="chance-of-rain-third">0%</p> <!-- api current.humidity disregard class name-->
                                         <p>Humidity</p>
                                     </div>
                                 </div>
@@ -366,7 +373,7 @@
                 <div class="weather-widget-main">
                     <div class="status-widget-1">
                         <div class="time-format">
-                            <h1 class="widget-time" id="widget-time-fourth">01:00</h1>
+                            <h1 class="widget-time" id="widget-time-fourth">00:00</h1>
                             <span id="am-pm-fourth" class="am-pm">PM</span> <!-- ALSO FIXED MERRIDIAN -->
                         </div>
                         <p class="widget-date" id="widget-date-fourth">July 01, 2023</p>
@@ -385,7 +392,7 @@
                                 <div class="status-div">
                                     <img src="./photo/status-icon/windspeed.svg">
                                     <div class="widget-details">
-                                        <p id="wind-speed-fourth"></p> <!-- api current.wind_kph -->
+                                        <p id="wind-speed-fourth">0kph</p> <!-- api current.wind_kph -->
                                         <p>Windspeed</p>
                                     </div>
                                 </div>
@@ -393,7 +400,7 @@
                                 <div class="status-div">
                                     <img src="./photo/status-icon/rainchance.svg">
                                     <div class="widget-details">
-                                        <p id="chance-of-rain-fourth"></p> <!-- api current.humidity disregard class name-->
+                                        <p id="chance-of-rain-fourth">0%</p> <!-- api current.humidity disregard class name-->
                                         <p>Humidity</p>
                                     </div>
                                 </div>

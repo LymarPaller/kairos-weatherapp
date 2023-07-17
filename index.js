@@ -538,7 +538,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   
     showCityButton.addEventListener("click", function() {
-      // Find the first hidden city and show it
+
       const hiddenCity = [...cities].find(city => city.style.display === "none");
       if (hiddenCity) {
         hiddenCity.style.display = "list-item";
@@ -547,7 +547,6 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 // show divs
-
 
 document.addEventListener("DOMContentLoaded", function() {
     const mainCityLink = document.getElementById("main-city-link");
@@ -566,10 +565,8 @@ document.addEventListener("DOMContentLoaded", function() {
     listItems.forEach(function(item, index) {
       item.addEventListener("click", function() {
         if (item === mainCityLink) {
-          // If the main city link is clicked, show the main city page and hide others
           mainPage.style.display = "block";
         } else {
-          // Hide the main city page and show the corresponding page
           mainPage.style.display = "none";
           pages.forEach(function(page) {
             page.style.display = "none";
@@ -1818,5 +1815,3 @@ inputElement3.addEventListener('input', () => {
     getCityName3();
 
 });
-
-
