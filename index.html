@@ -162,13 +162,13 @@
                 <div class="weather-widget-main">
                     <div class="status-widget-1">
                         <div class="time-format">
-                            <h1 class="widget-time" id="widget-time-second"></h1>
-                            <span id="am-pm-second" class="am-pm"></span> <!-- ALSO FIXED MERRIDIAN -->
+                            <h1 class="widget-time" id="widget-time-second">01:00</h1>
+                            <span id="am-pm-second" class="am-pm">PM</span> <!-- ALSO FIXED MERRIDIAN -->
                         </div>
-                        <p class="widget-date" id="widget-date-second"></p>
-                        <h1 class="widget-day" id="widget-day-second"></h1>
+                        <p class="widget-date" id="widget-date-second">July 01, 2023</p>
+                        <h1 class="widget-day" id="widget-day-second">MONDAY</h1>
                         <div id="widget-temp-second" class="widget-temp" title="Click to convert to other units">
-                            <span></span><p class="temp" id="temp_set-second"></p><span><p id = "setForC-second">°C</p></span><!-- api current.temp_c -->
+                            <span></span><p class="temp" id="temp_set-second">30</p><span><p id = "setForC-second">°C</p></span><!-- api current.temp_c -->
                         </div>
                     </div>
                     <div class="status-widget-2">
@@ -218,245 +218,41 @@
                 <div class="forecast-widget-main">
                     <div class="forecast-tab">
                         <div class="forecast-container">
-                            <img id="forecast-weather-img-a-second" src="" alt="">
+                            <img id="second-forecast-weather-img-a" src="" alt="">
                             <h1 class="forecast-day" id="day-1-second"></h1>
                         </div>
                     </div>
 
                     <div class="forecast-tab">
                         <div class="forecast-container">
-                            <img id="forecast-weather-img-b-second" src="" alt="">
+                            <img id="second-forecast-weather-img-b" src="" alt="">
                             <h1 class="forecast-day" id="day-2-second"></h1>
                         </div>
                     </div>
 
                     <div class="forecast-tab">
                         <div class="forecast-container">
-                            <img id="forecast-weather-img-c-second" src="" alt="">
+                            <img id="second-forecast-weather-img-c" src="" alt="">
                             <h1 class="forecast-day" id="day-3-second"></h1>
                         </div>
                     </div>
                     <div class="forecast-tab">
                         <div class="forecast-container">
-                            <img id="forecast-weather-img-d-second" src="" alt="">
+                            <img id="second-forecast-weather-img-d" src="" alt="">
                             <h1 class="forecast-day" id="day-4-second"></h1>
                         </div>
                     </div>
 
                     <div class="forecast-tab">
                         <div class="forecast-container">
-                            <img id="forecast-weather-img-e-second" src="" alt="">
+                            <img id="second-forecast-weather-img-e" src="" alt="">
                             <h1 class="forecast-day" id="day-5-second"></h1>
                         </div>
                     </div>
 
                     <div class="forecast-tab">
                         <div class="forecast-container">
-                            <img id="forecast-weather-img-f-second" src="" alt="">
-                            <h1 class="forecast-day" id="day-6-second"></h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3rd city div -->
-            <div class="city-two weather-all-detail-div3" style="display:none;">
-                <div class="weather-widget-main">
-                    <div class="status-widget-1">
-                        <div class="time-format">
-                            <h1 class="widget-time" id="widget-time-second">TEST 3</h1>
-                            <span id="am-pm-second" class="am-pm">TEST 3</span> <!-- ALSO FIXED MERRIDIAN -->
-                        </div>
-                        <p class="widget-date" id="widget-date-second"></p>
-                        <h1 class="widget-day" id="widget-day-second"></h1>
-                        <div id="widget-temp-second" class="widget-temp" title="Click to convert to other units">
-                            <span></span><p class="temp" id="temp_set-second"></p><span><p id = "setForC-second">°C</p></span><!-- api current.temp_c -->
-                        </div>
-                    </div>
-                    <div class="status-widget-2">
-                        <div class="image-container" id="current-weather-container-second">
-                            <img id="current-weather-img-second" src="" alt="">
-                            <h1 id="current-weather-second"></h1>
-                        </div>
-                        <div class="current-weather-details">
-                            <div class="weather-detail-row">
-                                <div class="status-div">
-                                    <img src="./photo/status-icon/windspeed.svg">
-                                    <div class="widget-details">
-                                        <p id="wind-speed-second"></p> <!-- api current.wind_kph -->
-                                        <p>Windspeed</p>
-                                    </div>
-                                </div>
-
-                                <div class="status-div">
-                                    <img src="./photo/status-icon/rainchance.svg">
-                                    <div class="widget-details">
-                                        <p id="chance-of-rain-second"></p> <!-- api current.humidity disregard class name-->
-                                        <p>Humidity</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="weather-detail-row">
-                                <div class="status-div">
-                                    <img src="./photo/status-icon/sunrise.svg">
-                                    <div class="widget-details">
-                                        <p class="sunrise">5:00am</p> <!-- api forecast.forecastday.astro.sunrise -->
-                                        <p>Sunrise</p>
-                                    </div>
-                                </div>
-
-                                <div class="status-div">
-                                    <img src="./photo/status-icon/sunset.svg">
-                                    <div class="widget-details">
-                                        <p class="sunset">6:00pm</p> <!-- api forecast.forecastday.astro.sunset -->
-                                        <p>Sunset</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="forecast-widget-main">
-                    <div class="forecast-tab">
-                        <div class="forecast-container">
-                            <img id="forecast-weather-img-a-second" src="" alt="">
-                            <h1 class="forecast-day" id="day-1-second"></h1>
-                        </div>
-                    </div>
-
-                    <div class="forecast-tab">
-                        <div class="forecast-container">
-                            <img id="forecast-weather-img-b-second" src="" alt="">
-                            <h1 class="forecast-day" id="day-2-second"></h1>
-                        </div>
-                    </div>
-
-                    <div class="forecast-tab">
-                        <div class="forecast-container">
-                            <img id="forecast-weather-img-c-second" src="" alt="">
-                            <h1 class="forecast-day" id="day-3-second"></h1>
-                        </div>
-                    </div>
-                    <div class="forecast-tab">
-                        <div class="forecast-container">
-                            <img id="forecast-weather-img-d-second" src="" alt="">
-                            <h1 class="forecast-day" id="day-4-second"></h1>
-                        </div>
-                    </div>
-
-                    <div class="forecast-tab">
-                        <div class="forecast-container">
-                            <img id="forecast-weather-img-e-second" src="" alt="">
-                            <h1 class="forecast-day" id="day-5-second"></h1>
-                        </div>
-                    </div>
-
-                    <div class="forecast-tab">
-                        <div class="forecast-container">
-                            <img id="forecast-weather-img-f-second" src="" alt="">
-                            <h1 class="forecast-day" id="day-6-second"></h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4th city div -->
-            <div class="city-three weather-all-detail-div4" style="display:none;">
-                <div class="weather-widget-main">
-                    <div class="status-widget-1">
-                        <div class="time-format">
-                            <h1 class="widget-time" id="widget-time-second">TEST 4</h1>
-                            <span id="am-pm-second" class="am-pm">TEST 4</span> <!-- ALSO FIXED MERRIDIAN -->
-                        </div>
-                        <p class="widget-date" id="widget-date-second"></p>
-                        <h1 class="widget-day" id="widget-day-second"></h1>
-                        <div id="widget-temp-second" class="widget-temp" title="Click to convert to other units">
-                            <span></span><p class="temp" id="temp_set-second"></p><span><p id = "setForC-second">°C</p></span><!-- api current.temp_c -->
-                        </div>
-                    </div>
-                    <div class="status-widget-2">
-                        <div class="image-container" id="current-weather-container-second">
-                            <img id="current-weather-img-second" src="" alt="">
-                            <h1 id="current-weather-second"></h1>
-                        </div>
-                        <div class="current-weather-details">
-                            <div class="weather-detail-row">
-                                <div class="status-div">
-                                    <img src="./photo/status-icon/windspeed.svg">
-                                    <div class="widget-details">
-                                        <p id="wind-speed-second"></p> <!-- api current.wind_kph -->
-                                        <p>Windspeed</p>
-                                    </div>
-                                </div>
-
-                                <div class="status-div">
-                                    <img src="./photo/status-icon/rainchance.svg">
-                                    <div class="widget-details">
-                                        <p id="chance-of-rain-second"></p> <!-- api current.humidity disregard class name-->
-                                        <p>Humidity</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="weather-detail-row">
-                                <div class="status-div">
-                                    <img src="./photo/status-icon/sunrise.svg">
-                                    <div class="widget-details">
-                                        <p class="sunrise">5:00am</p> <!-- api forecast.forecastday.astro.sunrise -->
-                                        <p>Sunrise</p>
-                                    </div>
-                                </div>
-
-                                <div class="status-div">
-                                    <img src="./photo/status-icon/sunset.svg">
-                                    <div class="widget-details">
-                                        <p class="sunset">6:00pm</p> <!-- api forecast.forecastday.astro.sunset -->
-                                        <p>Sunset</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="forecast-widget-main">
-                    <div class="forecast-tab">
-                        <div class="forecast-container">
-                            <img id="forecast-weather-img-a-second" src="" alt="">
-                            <h1 class="forecast-day" id="day-1-second"></h1>
-                        </div>
-                    </div>
-
-                    <div class="forecast-tab">
-                        <div class="forecast-container">
-                            <img id="forecast-weather-img-b-second" src="" alt="">
-                            <h1 class="forecast-day" id="day-2-second"></h1>
-                        </div>
-                    </div>
-
-                    <div class="forecast-tab">
-                        <div class="forecast-container">
-                            <img id="forecast-weather-img-c-second" src="" alt="">
-                            <h1 class="forecast-day" id="day-3-second"></h1>
-                        </div>
-                    </div>
-                    <div class="forecast-tab">
-                        <div class="forecast-container">
-                            <img id="forecast-weather-img-d-second" src="" alt="">
-                            <h1 class="forecast-day" id="day-4-second"></h1>
-                        </div>
-                    </div>
-
-                    <div class="forecast-tab">
-                        <div class="forecast-container">
-                            <img id="forecast-weather-img-e-second" src="" alt="">
-                            <h1 class="forecast-day" id="day-5-second"></h1>
-                        </div>
-                    </div>
-
-                    <div class="forecast-tab">
-                        <div class="forecast-container">
-                            <img id="forecast-weather-img-f-second" src="" alt="">
+                            <img id="second-forecast-weather-img-f" src="" alt="">
                             <h1 class="forecast-day" id="day-6-second"></h1>
                         </div>
                     </div>

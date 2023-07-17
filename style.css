@@ -382,14 +382,19 @@ body {
         flex-wrap: wrap;
         justify-content: space-evenly;
         margin-top: 1rem;
+        
     }
 
 
     .status-widget-1 {
         margin: 0;
+        margin-left: 3rem;
+        width: 15vw;
     }
     .status-widget-2 {
         margin: 0;
+        width: 25vw;
+        height: 50vh;
         margin-top: 1rem;
         display: flex;
         flex-direction: column;
