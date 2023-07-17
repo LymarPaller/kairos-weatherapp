@@ -5,7 +5,7 @@
 
 const geoLocAPIKEY = '42207e457e3eb8b6df3dd8146f5bfc1b';
 const forecastAPIKEY = 'ad6a22d37a6e4fdeb45135830230707';
-
+const q = '';
 
 // variables for ID
 
@@ -61,60 +61,9 @@ const longitude = position.coords.longitude;
 
 // sets night and day background function
 
-function setBackground(){
-    var date = new Date();
-    var hours = date.getHours();
+// fetch geoAPI and find searched city to API URL
 
-    var body = document.body;
-    if (hours >= 6 && hours < 18){
-        document.body.style.backgroundImage = "url('./photo/background-day.jpg')";
-        console.log("day");
-    }
-    else {
-        document.body.style.backgroundImage = "url('./photo/background-night.jpg')";
-        console.log("night");
-    }
-}
-
-setBackground();
-setInterval(setBackground,60000);
-
-const rowtag = document.getElementById('listActual');
-const listIm = rowtag.querySelectorAll('li');
-
-listIm.forEach(function(item){
-    item.addEventListener('click', function(event){
-        highlightListItem(event.target);
-    });
-});
-
-// highlight nav links in nav bar
-
-function highlightListItem(clickedItem){
-    listIm.forEach(function(item){
-        item.style.backgroundColor = '';
-        item.querySelector('h1').style.backgroundColor=''
-        item.querySelector('p').style.backgroundColor=''
-    });
-
-    clickedItem.style.backgroundColor = '#EAEAEA';
-    clickedItem.querySelector('h1').style.backgroundColor='#EAEAEA';
-    clickedItem.querySelector('p').style.backgroundColor='#EAEAEA';
-    listIm.forEach(function(item){
-        if(item !== clickedItem){
-            item.style.filter = 'blur(1px)';
-            item.querySelector('p').style.backgroundColor=''
-        }
-        else{
-            item.style.filter='';
-            item.querySelector('p').style.backgroundColor=''
-        }
-    });
-}
-
-// fetch geoAPI and apply latitude and latitude to API URL
-
-fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=42207e457e3eb8b6df3dd8146f5bfc1b`)
+fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${q}&limit=5&appid=42207e457e3eb8b6df3dd8146f5bfc1b`)
     .then((result) => {
         if (result.ok) {
             return result.json();
@@ -521,143 +470,39 @@ const errorCallback = (err) => {
     console.log(err);
 };
 
- if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-    
-};
-
-// ADDS BUTTON THAT CREATES NEW NAV LINK WHICH CONTAINS A SEARCH BAR
-// TEMPORARY DISABLE ADD NEW CITY BUTTON
-
-// const navContent = ["New City"];
-// let ulCounter = 1;
-
-// function generateNav() {
-//   const navContainer = document.getElementById("nav-container");
-
-//   // Create a new nav-ul element
-//   const navUl = document.createElement("ul");
-//   navUl.id = `navUl${ulCounter}`;
-
-//   // Add content to the nav-ul
-//   navContent.forEach(item => {
-//     const li = document.createElement("li");
-
-//     // Create the search box
-//     const searchBox = document.createElement("input");
-//     searchBox.type = "text";
-//     searchBox.placeholder = "Enter City";
-//     searchBox.className = "search-box"
-//     li.appendChild(searchBox);
-
-//     navUl.appendChild(li);
-//   });
-
-//   // Append the nav-ul to the navContainer
-//   navContainer.appendChild(navUl);
-
-//   ulCounter++;
-// }
-
-// const generateButton = document.getElementById("generateButton");
-// generateButton.addEventListener("click", generateNav);
-const searchInput = document.getElementById('searchInput');
-
-function locationSearch(){
-    const q = searchInput.value.toLowerCase();
-    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${q}&limit=5&appid=42207e457e3eb8b6df3dd8146f5bfc1b`)
-    .then((result) => {
-        if (result.ok) {
-            return result.json();
-        }
-        else {
-            console.log('error');
-        }
-     })
-     .then(data => {
-        console.log(data);
-     })
-}
-function clearContainer(container){
-    while(container.firstChild){
-        container.removeChild(container.firstChild);
+if (uniqueNamesValueSet.size>=6) {
+    uniqueNamesResponse = Object.values(uniqueNamesResponse).slice(0,6);
+    for(let i = 0; i < (uniqueNamesValueSet.size); i++){
+        removedItemsinList.push(rowList.lastChild);
+        rowList.lastChild.remove();
     }
 }
 
-searchInput.addEventListener('input',function(event){
-    const q = searchInput.value.toLowerCase();
-    const container = document.getElementById('listExmp');
-    const listExample = document.getElementById('listSelector');
-    const rowList = document.getElementById('listActual');
-
-    if(q===''){
-        clearContainer(container);
-    }
-    if (q!==''){
-        fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${q}&limit=4&appid=42207e457e3eb8b6df3dd8146f5bfc1b`)
-    .then((result) => {
-        if (result.ok) {
-            return result.json();
-        }   
-        else {
-            console.log('error');
-        }   
-    })
-    .then(data => {
-        clearContainer(container);
-        var uniqueNamesResponse = [];
-            const uniqueNamesValueSet = new Set();
-    
-        data.forEach (item => {
-            if(!uniqueNamesValueSet.has(item.name)){
-                uniqueNamesValueSet.add(item.name);
-                uniqueNamesResponse.push(item);
+else if(uniqueNamesValueSet.size<6) {
+    if (removedItemsinList.length === 0){
+        console.log('howdy');
+        console.log(uniqueNamesValueSet.size);
+        for(let i = 0; i < (uniqueNamesValueSet.size+2); i++){
+            if(i % 2 === 0){
+                removedItemsinList.push(rowList.lastChild);
             }
-        });
-
-        uniqueNamesResponse.forEach(item => {
-            const listI = document.createElement('li');
-            const headingTag =document.createElement('h1');
-            headingTag.textContent =item.name;
-            listI.appendChild(headingTag);
-            listI.classList.add("listItems");
-            container.appendChild(listI);
-            rowList.insertBefore(container,rowList.firstChild);    
-            listExample.append(rowList);       
-        });
-    })
-
-}});
-
-const maintag = document.getElementById('#listExmp li');
-const listSearch = maintag.querySelectorAll('li');
-console.log("hi11");
-listSearch.forEach(function(item){
-    console.log("hi12");
-    item.addEventListener('click', function(event){
-        highlightSearchListItem(event.target);
-    });
-});
-
-function highlightSearchListItem(clickedItem){
-    console.log("hi");
-    listSearch.forEach(function(item){
-        item.style.backgroundColor = '';
-        item.querySelector('h1').style.backgroundColor=''
-        item.querySelector('p').style.backgroundColor=''
-    }); 
-
-    clickedItem.style.backgroundColor = '#EAEAEA';
-    clickedItem.querySelector('h1').style.backgroundColor='#EAEAEA';
-    clickedItem.querySelector('p').style.backgroundColor='#EAEAEA';
-    listSearch.forEach(function(item){
-        if(item !== clickedItem){
-            item.style.filter = 'blur(1px)';
-            item.querySelector('p').style.backgroundColor=''
+            rowList.lastChild.remove();
         }
-        else{
-            item.style.filter='';
-            item.querySelector('p').style.backgroundColor=''
+        console.log(removedItemsinList);
+    }
+    else{
+        console.log('how')
+        if (listExample.querySelectorAll('p').length>8){
+            for(let i = 0; i < (listExample.querySelectorAll('li').length-8); i++){
+                if(i % 2 === 0){
+                    removedItemsinList.push(rowList.lastChild);
+                }
+                rowList.lastChild.remove();
+            }
         }
-    });
+        for(let j = 0; j < (6-uniqueNamesValueSet.size); j++){
+            const restoreditem = removedItemsinList.pop();
+            rowList.append(restoreditem);               
+        }
+    }
 }
