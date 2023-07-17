@@ -21,7 +21,8 @@ const curDate = document.getElementById('widget-date');
 const day = document.getElementById('widget-day');
 const amPm = document.getElementById('am-pm');
 const weatherImageSrc = document.getElementById('current-weather-img');
-
+const currentSunriseTime = document.getElementById('sunrise-main');
+const currentSunsetTime = document.getElementById('sunset-main');
 
 // sets current time and current date
 
@@ -150,10 +151,14 @@ fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${long
                 const currentHumidity = current.humidity;
                 const currentTempC = current.temp_c;
                 const currentTempF = current.temp_f;
-
+                const currentSunRise = forecast.forecastday[0].astro.sunrise;
+                const currentSunSet = forecast.forecastday[0].astro.sunset;
+                
                 currentWeather.textContent = `${currentConditionText}`;
                 windSpeed.textContent = `${currentWindSpeed}kph`;
                 humidity.textContent = `${currentHumidity}%`;
+                currentSunriseTime.textContent = `${currentSunRise}`;
+                currentSunsetTime.textContent = `${currentSunSet}`;
 
                 const isCelsius = true;
                 temp.textContent = `${currentTempC}`;
@@ -587,6 +592,9 @@ const secondtAMPM = document.getElementById('am-pm-second');
 const secondCurrentTime = document.getElementById('widget-time-second');
 const weatherImageSrcSecond = document.getElementById('current-weather-img-second');
 const tempSecond = document.getElementById('temp_set-second');
+const sunriseSecond = document.getElementById('sunrise-second');
+const sunsetSecond = document.getElementById('sunset-second');
+
 function setCurrentWeatherImage(currentConditionText) {
     
     let lowercaseConditionText = currentConditionText.toLowerCase();
@@ -652,6 +660,12 @@ const getCityName = () => {
             const currentTempC = current.temp_c;
             const imageSrc = setCurrentWeatherImage(currentConditionTextSecond);
             const currentTempF = current.temp_f;
+            const currentSunRise = forecast.forecastday[0].astro.sunrise;
+            const currentSunSet = forecast.forecastday[0].astro.sunset;
+
+            
+            sunriseSecond.textContent = `${currentSunRise}`;
+            sunsetSecond.textContent = `${currentSunSet}`;
 
             let isCelsius = true;
                 tempSecond.textContent = `${currentTempC}`;
@@ -1042,6 +1056,8 @@ const thirdtAMPM = document.getElementById('am-pm-third');
 const thirdCurrentTime = document.getElementById('widget-time-third');
 const weatherImageSrcThird = document.getElementById('current-weather-img-third')
 const tempThird = document.getElementById('temp_set-third');
+const sunriseThird = document.getElementById('sunrise-third');
+const sunsetThird = document.getElementById('sunset-third');
 // search box 2
 
 const getCityName2 = () => {
@@ -1068,6 +1084,11 @@ const getCityName2 = () => {
             const currentTempC = current.temp_c;
             const imageSrc = setCurrentWeatherImage(currentConditionTextThird);
             const currentTempF = current.temp_f;
+            const currentSunRise = forecast.forecastday[0].astro.sunrise;
+            const currentSunSet = forecast.forecastday[0].astro.sunset;
+
+            sunriseThird.textContent = `${currentSunRise}`;
+            sunsetThird.textContent = `${currentSunSet}`;
 
             let isCelsius = true;
             tempThird.textContent = `${currentTempC}`;
@@ -1423,6 +1444,8 @@ const fourthtAMPM = document.getElementById('am-pm-fourth');
 const fourthCurrentTime = document.getElementById('widget-time-fourth');
 const weatherImageSrcFourth = document.getElementById('current-weather-img-fourth')
 const tempFourth = document.getElementById('temp_set-fourth')
+const sunriseFourth = document.getElementById('sunrise-fourth');
+const sunsetFourth = document.getElementById('sunset-fourth');
 // search box 3
 
 const getCityName3 = () => {
@@ -1449,6 +1472,12 @@ const getCityName3 = () => {
             const currentTempC = current.temp_c;
             const imageSrc = setCurrentWeatherImage(currentConditionTextFourth);
             const currentTempF = current.temp_f;
+
+            const currentSunRise = forecast.forecastday[0].astro.sunrise;
+            const currentSunSet = forecast.forecastday[0].astro.sunset;
+
+            sunriseFourth.textContent = `${currentSunRise}`;
+            sunsetFourth.textContent = `${currentSunSet}`;
 
             let isCelsius = true;
             tempFourth.textContent = `${currentTempC}`;

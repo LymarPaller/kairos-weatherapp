@@ -365,6 +365,7 @@ body {
         font-size: 1.4rem;
         font-weight: 600;
         font-family: var(--main-font);
+        background-color: white;
     }
 
     .row h1 {
