@@ -93,6 +93,7 @@ body {
     justify-content: center;
     align-items: center;
     word-wrap: break-word;
+    position: relative;
 }
 
 .generate-button button {
@@ -369,31 +370,53 @@ body {
     .row h1 {
         font-size: 1.5rem;
         
-    };
-
-    .weather-all-detail-div {
-        background-color:blue;
-        display: flex; 
-        width: 100%;
     }
 
-    .weather-widget-main{
+    .row .button-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .btn-primary {
+        margin-top: 1rem;
+        text-align: center;
+        background-color: var(--font-color-day);
+        color: var(--font-color-night);
+        color: #EAEAEA;
+        border-radius: 5px;
+        width: 100%;
+    }
+    
+    .close-button {
+        border: 0;
+        background-color: var(--font-color-day);
+        color: var(--font-color-night);
+        width: 5rem;
+        margin-top: .3rem;
+        border-radius: 5px;
+        padding-top: .1rem;
+        padding-bottom: .3rem;
+    }
+
+    .weather-widget-main {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
         margin-top: 1rem;
+        width: 50vw;
         
     }
 
 
     .status-widget-1 {
         margin: 0;
-        margin-left: 3rem;
+        margin-left: 4rem;
         width: 15vw;
     }
     .status-widget-2 {
         margin: 0;
-        width: 25vw;
+        width: 20vw;
         height: 50vh;
         margin-top: 1rem;
         display: flex;
