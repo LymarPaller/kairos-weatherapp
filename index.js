@@ -4,7 +4,7 @@
 
 
 const geoLocAPIKEY = '42207e457e3eb8b6df3dd8146f5bfc1b';
-const forecastAPIKEY = 'ad6a22d37a6e4fdeb45135830230707';
+const forecastAPIKEY = 'b949fd5cf08a4f2496f14101231907';
 
 
 // variables for MAIN div
@@ -205,7 +205,7 @@ const successCallback = (position) => {
 
             // fetch weather forecast API and apply current city and state in API URL
             
-            fetch(`https://api.weatherapi.com/v1/forecast.json?key=ad6a22d37a6e4fdeb45135830230707%20&q=${currentCity},${currentState}&days=7&aqi=no&alerts=no`)
+            fetch(`https://api.weatherapi.com/v1/forecast.json?key=${forecastAPIKEY}%20&q=${currentCity},${currentState}&days=7&aqi=no&alerts=no`)
                 .then((result) => {
                     if (result.ok) {
                         return result.json();
@@ -371,7 +371,7 @@ const getCityName = () => {
 
     if (secondCityName === '') return;
 
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=ad6a22d37a6e4fdeb45135830230707%20&q=${secondCityName}&days=7&aqi=no&alerts=no`)
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=${forecastAPIKEY}%20&q=${secondCityName}&days=7&aqi=no&alerts=no`)
         .then((result) => {
             if (result.ok) {
                 return result.json();
@@ -539,7 +539,7 @@ const getCityName2 = () => {
 
     if (secondCityName === '') return;
 
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=ad6a22d37a6e4fdeb45135830230707%20&q=${secondCityName}&days=7&aqi=no&alerts=no`)
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=${forecastAPIKEY}%20&q=${secondCityName}&days=7&aqi=no&alerts=no`)
         .then((result) => {
             if (result.ok) {
                 return result.json();
@@ -672,7 +672,7 @@ const getCityName3 = () => {
 
     if (thirdCityName === '') return;
 
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=ad6a22d37a6e4fdeb45135830230707%20&q=${thirdCityName}&days=7&aqi=no&alerts=no`)
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=${forecastAPIKEY}%20&q=${thirdCityName}&days=7&aqi=no&alerts=no`)
         .then((result) => {
             if (result.ok) {
                 return result.json();
@@ -749,7 +749,6 @@ const getCityName3 = () => {
             const forecastD = document.getElementById('fourth-forecast-weather-img-d');
             const forecastE = document.getElementById('fourth-forecast-weather-img-e');
             const forecastF = document.getElementById('fourth-forecast-weather-img-f');
-            // SETS IMAGE SOURCE FOR EACH FORECAST
 
             // SETS IMAGE SOURCE FOR EACH FORECAST
 
