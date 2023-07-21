@@ -149,6 +149,22 @@ function getForecastWeatherConditions(forecastData) {
     return weatherConditions;
 }
 
+//SET DAY AND NIGHT BACKGROUND BASED ON USERS CURRENT TIME
+
+function setBackground(){
+    const hours = today.getHours();
+
+    const body = document.body;
+    if (hours >= 6 && hours < 18){
+        body.style.backgroundImage = "url('./photo/background-day.jpg')";
+        console.log("day");
+    }
+    else {
+        body.style.backgroundImage = "url('./photo/background-night.jpg')";
+        console.log("night");
+    }
+}
+
 
 // get postion coordinate for longitude and latitude 
 
@@ -157,22 +173,7 @@ const successCallback = (position) => {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
 
-    // sets night and day background function
-
-    function setBackground(){
-        const date = new Date();
-        const hours = date.getHours();
-
-        const body = document.body;
-        if (hours >= 6 && hours < 18){
-            body.style.backgroundImage = "url('./photo/background-day.jpg')";
-            console.log("day");
-        }
-        else {
-            body.style.backgroundImage = "url('./photo/background-night.jpg')";
-            console.log("night");
-        }
-    }
+    // sets night and day background functio
 
     setBackground();
     setInterval(setBackground,60000);
