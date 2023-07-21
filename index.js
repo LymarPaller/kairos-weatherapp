@@ -236,10 +236,11 @@ const successCallback = (position) => {
                     currentSunriseTime.textContent = `${currentSunRise}`;
                     currentSunsetTime.textContent = `${currentSunSet}`;
 
-                    const isCelsius = true;
+                    let isCelsius = true;
                     temp.textContent = `${currentTempC}`;
+
                     function displayTemperature() {
-                        const tempElement = document.getElementById("setForC");
+                    const tempElement = document.getElementById("setForC");
                         if(isCelsius){
                             tempElement.textContent = "°C";
                             temp.textContent = `${currentTempC}`;
@@ -249,14 +250,15 @@ const successCallback = (position) => {
                             temp.textContent = `${currentTempF}`;
                         }
                     }
-
+        
                     function toggleUnits(){
                         isCelsius = !isCelsius;
                         displayTemperature();
                     }
-
+        
                     document.getElementById("widget-temp").addEventListener("click",toggleUnits);
-
+                    
+                    
                     //FORECAST
 
                     const forecastDays = [];
@@ -398,18 +400,18 @@ const getCityName = () => {
             sunsetSecond.textContent = `${currentSunSet}`;
 
             let isCelsius = true;
-                tempSecond.textContent = `${currentTempC}`;
-                function displayTemperature() {
-                    const tempElement = document.getElementById("setForC-second");
-                    if(isCelsius){
-                        tempElement.textContent = "°C";
-                        tempSecond.textContent = `${currentTempC}`;
-                    }
-                    else{
-                        tempElement.textContent = "°F";
-                        tempSecond.textContent = `${currentTempF}`;
-                    }
+            tempSecond.textContent = `${currentTempC}`;
+            function displayTemperature() {
+                const tempElement = document.getElementById("setForC-second");
+                if(isCelsius){
+                    tempElement.textContent = "°C";
+                    tempSecond.textContent = `${currentTempC}`;
                 }
+                else{
+                    tempElement.textContent = "°F";
+                    tempSecond.textContent = `${currentTempF}`;
+                }
+            }
 
             function toggleUnits(){
                 isCelsius = !isCelsius;
