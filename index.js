@@ -1,11 +1,8 @@
 // const forecastAPI = `https://api.weatherapi.com/v1/forecast.json?key=ad6a22d37a6e4fdeb45135830230707%20&q=${currentCity}&days=7&aqi=no&alerts=no`;
-
 // cosnt geoLocAPI2 = `https://api.openweathermap.org/geo/1.0/reverse?lat=10.6066483&lon=123.0404676&appid=42207e457e3eb8b6df3dd8146f5bfc1b`
-
 
 const geoLocAPIKEY = '42207e457e3eb8b6df3dd8146f5bfc1b';
 const forecastAPIKEY = 'b949fd5cf08a4f2496f14101231907';
-
 
 // variables for MAIN div
 
@@ -100,7 +97,7 @@ day.textContent = `${dayOfWeek}`;
 // SELECT IMAGE FOR CURRENT WEATHER
 
 function setCurrentWeatherImage(currentConditionText) {
-    
+
     let lowercaseConditionText = currentConditionText.toLowerCase();
     let imageSrc = '';
 
@@ -154,46 +151,46 @@ function getForecastWeatherConditions(forecastData) {
 
 const successCallback = (position) => {
     
-    const latitude = position.coords.latitude;
-    const longitude = position.coords.longitude;
+const latitude = position.coords.latitude;
+const longitude = position.coords.longitude;
 
     // sets night and day background function
 
-    function setBackground(){
-        const date = new Date();
-        const hours = date.getHours();
+function setBackground(){
+    const date = new Date();
+    const hours = date.getHours();
 
-        const body = document.body;
-        if (hours >= 6 && hours < 18){
-            document.body.style.backgroundImage = "url('./photo/background-day.jpg')";
-            console.log("day");
-        }
-        else {
-            document.body.style.backgroundImage = "url('./photo/background-night.jpg')";
-            console.log("night");
-        }
+    const body = document.body;
+    if (hours >= 6 && hours < 18){
+        document.body.style.backgroundImage = "url('./photo/background-day.jpg')";
+        console.log("day");
     }
+    else {
+        document.body.style.backgroundImage = "url('./photo/background-night.jpg')";
+        onsole.log("night");
+    }
+}
 
-    setBackground();
-    setInterval(setBackground,60000);
+setBackground();
+setInterval(setBackground,60000);
 
 
-    // fetch geoAPI and apply latitude and latitude to API URL
+// fetch geoAPI and apply latitude and latitude to API URL
 
-    fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=42207e457e3eb8b6df3dd8146f5bfc1b`)
-        .then((result) => {
-            if (result.ok) {
-                return result.json();
-            }
-            else {
-                console.log('error');
-            }
-        })
+fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=42207e457e3eb8b6df3dd8146f5bfc1b`)
+  .then((result) => {
+    if (result.ok) {
+      return result.json();
+    }
+    else {
+      console.log('error');
+    }
+  })
 
-        .then((arr) => {
-            const location = arr[0];
-            // console.log(location.name);
-            // console.log(location.state);
+  .then((arr) => {
+    const location = arr[0];
+      // console.log(location.name);
+      // console.log(location.state);
             // console.log(location.country)
             let currentCity = location.name;
             let currentState = location.state;
