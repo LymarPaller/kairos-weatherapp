@@ -1,100 +1,101 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@200;300;400&display=swap');
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  ;
 
-    --background-color-day: #EAEAEA;
-    --widgetcolor-day: #FFFFFF;
-    --background-color-night: #383838;
-    --widgetcolor-night: #232323;
-    --font-color-day: #003854;
-    --font-color-night: #FFFFFF;
+  --background-color-day: #EAEAEA;
+  --widgetcolor-day: #FFFFFF;
+  --background-color-night: #383838;
+  --widgetcolor-night: #232323;
+  --font-color-day: #003854;
+  --font-color-night: #FFFFFF;
 
-    --main-font: Bebas+Neue;
-    --paragraph-font: Montserrat;
+  --main-font: Bebas+Neue;
+  --paragraph-font: Montserrat;
 
-    color: var(--font-color-day);
-    
+  color: var(--font-color-day);
+
 }
 
 h1 {
-    font-family: var(--main-font);
-    font-weight: 600;
-    text-transform: uppercase;
+  font-family: var(--main-font);
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 p {
-    font-family: var(--paragraph-font);
+  font-family: var(--paragraph-font);
 }
 
 body {
-    background-image: url(./photo/background-day.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    transition: background-color 0.5s;
+  background-image: url(./photo/background-day.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: background-color 0.5s;
 }
 
 .cfbutton {
-background-color: var(--background-color-day);
-border: none;
-text-align: center;
-display: inline;
-padding: 10px 20px;
+  background-color: var(--background-color-day);
+  border: none;
+  text-align: center;
+  display: inline;
+  padding: 10px 20px;
 }
 
 .logo-container {
-    margin-top: 5vh;
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  margin-top: 5vh;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.logo-container img{
-    height: 16vh;
+.logo-container img {
+  height: 16vh;
 }
 
 .title-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 6rem;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 6rem;
+  position: relative;
 }
 
 .title-container h1 {
-    margin-bottom: 0;
-    color: white;
-    font-size: 4rem;
-    text-shadow: 0 0 10px black ;
+  margin-bottom: 0;
+  color: white;
+  font-size: 4rem;
+  text-shadow: 0 0 10px black;
 }
 
 .title-container p {
-    font-size: 1.3rem;
-    margin-top: 0;
-    margin-bottom: 0;
-    text-align: center;
-    color: white;
-    position: absolute;
-    bottom: -1rem;
-    right: .8rem;
-    text-shadow: 0 0 10px black ;
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  color: white;
+  position: absolute;
+  bottom: -1rem;
+  right: .8rem;
+  text-shadow: 0 0 10px black;
 }
 
 /* HEADER NAVBAR */
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(10, 10, 10);
-    transition: background-color 0.5s;
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(10, 10, 10);
+  transition: background-color 0.5s;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-widgets-container {
@@ -105,7 +106,7 @@ body {
 }
 
 .navbar-toggler {
-    color: var(--font-color-day);
+  color: var(--font-color-day);
 }
 
 .navbar {
@@ -118,125 +119,129 @@ body {
 }
 
 .navbar-toggler {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 .navbar-ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
 }
 
 .navbar-ul .row {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar-ul li {
-    background-color: white;
-    width: 100%;
-    padding-top: .6rem;
-    padding-bottom: .6rem;
-    border-radius: 0;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    cursor: default;
-    margin-top: 1rem;
+  background-color: white;
+  width: 100%;
+  padding-top: .6rem;
+  padding-bottom: .6rem;
+  border-radius: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  cursor: default;
+  margin-top: 1rem;
 }
 
 .navbar-ul li:hover {
-    background-color: var(--background-color-day);
-    transition-duration: 600ms;
+  background-color: var(--background-color-day);
+  transition-duration: 600ms;
 }
 
 .search-box {
-    border-radius: 10px;
-    border: 0;
+  border-radius: 10px;
+  border: 0;
 }
 
-.search-box:focus{
-    border-color: none;
-    box-shadow: 0 0 10px black;
+.search-box:focus {
+  border-color: none;
+  box-shadow: 0 0 10px black;
 }
 
 .search-box input {
-    border-radius: 10px;
-    margin-top: 1rem;
-    width: 13vw;
-    height: 3rem;
-    text-align: center;
+  border-radius: 10px;
+  margin-top: 1rem;
+  width: 13vw;
+  height: 3rem;
+  text-align: center;
 }
 
 .row {
-    width: 100%;
+  width: 100%;
 }
 
 .row input {
-    width: 100%;
-    height: auto;
-    border: 0;
-    text-align: center;
-    margin-top: 0;
-    font-size: 1.4rem;
-    font-weight: 600;
-    font-family: var(--main-font);
-    background-color: white;
+  width: 100%;
+  height: auto;
+  border: 0;
+  text-align: center;
+  margin-top: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: var(--main-font);
+  background-color: white;
 }
 
 .row input {
-    width: 100%;
-    height: auto;
-    border: 0;
-    text-align: center;
-    margin-top: 0;
-    font-size: 1.4rem;
-    font-weight: 600;
-    font-family: var(--main-font);
-    background-color: white;
+  width: 100%;
+  height: auto;
+  border: 0;
+  text-align: center;
+  margin-top: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: var(--main-font);
+  background-color: white;
 }
 
 .row li h1 {
-    width: 100%;
-    padding-top: 0.1rem;
-    font-size: 1.5rem;
-    margin-bottom: 0;
-};
+  width: 100%;
+  padding-top: 0.1rem;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+;
 
 .row p {
-    font-size: .5rem;
-};
+  font-size: .5rem;
+}
+
+;
 
 .row .button-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-primary {
-    margin-top: 1rem;
-    text-align: center;
-    background-color: var(--font-color-day);
-    color: var(--font-color-night);
-    color: #EAEAEA;
-    border-radius: 5px;
-    width: 100%;
+  margin-top: 1rem;
+  text-align: center;
+  background-color: var(--font-color-day);
+  color: var(--font-color-night);
+  color: #EAEAEA;
+  border-radius: 5px;
+  width: 100%;
 }
 
 .close-button {
-    border: 0;
-    background-color: var(--font-color-day);
-    color: var(--font-color-night);
-    width: 5rem;
-    margin-top: .3rem;
-    border-radius: 5px;
-    padding-top: .0;
-    padding-bottom: .0;
+  border: 0;
+  background-color: var(--font-color-day);
+  color: var(--font-color-night);
+  width: 5rem;
+  margin-top: .3rem;
+  border-radius: 5px;
+  padding-top: .0;
+  padding-bottom: .0;
 }
 
 
@@ -245,82 +250,82 @@ body {
 /* MAIN CONTAINER */
 
 .weather-widget-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 
 }
 
 .status-widget-1 {
-    margin: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .status-widget-2 {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* WIDGET 1 ELEMENTS */
 
 .time-format {
-    display: flex;
-    align-items: center;
-    
+  display: flex;
+  align-items: center;
+
 }
 
 .widget-time {
-    font-size: 5rem;
-    margin-bottom: 0;
-    margin-top: 0;
+  font-size: 5rem;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .am-pm {
-    font-size: 2rem;
-    margin-bottom: 0;
-    margin-top: 0;
-    font-weight: bolder;
+  font-size: 2rem;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-weight: bolder;
 }
 
 .widget-date {
-    font-size: 2rem;
-    margin-bottom: 0;
-    margin-top: 0;
+  font-size: 2rem;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .widget-day {
-    font-family: var(--main-font);
-    font-size: 2rem;
-    text-transform: uppercase;
-    margin-bottom: 0;
-    margin-top: 0;
+  font-family: var(--main-font);
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .widget-temp {
-    font-weight: 900;
-    font-size: 2rem;
-    display: flex;
-    flex-direction: row;
-    cursor: pointer;
+  font-weight: 900;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
 }
 
-.status-div{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center ;
-    margin: .6rem;
+.status-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: .6rem;
 }
 
 .status-div img {
-    width: 1.5rem;
+  width: 1.5rem;
 }
 
 /* WIDGET 2 ELEMENTS */
@@ -333,7 +338,7 @@ body {
     flex-direction: column;
     border-radius: 25px;
     width: 11rem;
-    height: 14rem;
+    height: 13rem;
 }
 
 .image-container > img {
@@ -342,80 +347,80 @@ body {
     pad: 1rem;
 }
 
-.image-container > h1 {
-    text-align: center;
-    font-size: 1.5rem;
-    margin-top: .5rem;
+.image-container>h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: .5rem;
 }
 
 .current-weather-details {
-    margin-top: 1.5rem;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .status-div img {
-    width: 1.5rem;
+  width: 1.5rem;
 }
 
 .widget-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 1rem;
-    width: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1rem;
+  width: 4rem;
 }
 
 .current-weather-details {
-    margin-top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .widget-details p {
-    margin-bottom: 0;
-    text-align: left;
-    font-size: .7rem;
-    font-weight: bold;
+  margin-bottom: 0;
+  text-align: left;
+  font-size: .7rem;
+  font-weight: bold;
 }
 
 /* FORECAST TAB */
 
 .forecast-widget-main {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 .forecast-tab {
-    background-color: white;
-    border-radius: 10px;
-    width: 7rem;
-    height: 8rem;
-    margin: 1rem;
+  background-color: white;
+  border-radius: 10px;
+  width: 7rem;
+  height: 8rem;
+  margin: 1rem;
 }
 
 .forecast-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .forecast-day {
-    font-size: 1rem;
-    text-align: center;
-    margin-top: 2rem;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 2rem;
 }
 
-.forecast-container > img {
-    margin-top: 1rem;
-    width: 3rem;
+.forecast-container>img {
+  margin-top: 1rem;
+  width: 3rem;
 }
 
 footer {
@@ -501,221 +506,222 @@ footer a {
 
 @media screen and (min-width: 573px) {
 
-    body {
+  body {
     display: flex;
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    }
+  }
 
-    .logo-container {
-        margin-top: 5vh;
-        width: 90%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
+  .logo-container {
+    margin-top: 5vh;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .logo-container img{
-        height: 12vh;
-    }
+  .logo-container img {
+    height: 12vh;
+  }
 
-    .title-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        margin-left: .5rem;
-        height: 6rem;
-        position: relative;
-    }
+  .title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-left: .5rem;
+    height: 6rem;
+    position: relative;
+  }
 
-    .title-container h1 {
-        margin-bottom: 0;
-        color: white;
-        font-size: 4rem;
-        text-shadow: 0 0 10px black ;
-    }
+  .title-container h1 {
+    margin-bottom: 0;
+    color: white;
+    font-size: 4rem;
+    text-shadow: 0 0 10px black;
+  }
 
-    .title-container p {
-        font-size: 1.2rem;
-        margin-top: 0;
-        margin-bottom: 0;
-        text-align: center;
-        color: white;
-        position: absolute;
-        bottom: 0;
-        right: .8rem;
-        text-shadow: 0 0 10px black ;
-    }
+  .title-container p {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    right: .8rem;
+    text-shadow: 0 0 10px black;
+  }
 
-    .main-widgets-container {
-        width: fit-content;
-        height: auto;
-        overflow: hidden;
-        margin-top: 1rem;
-        display: flex;
-        border-radius: 25px;
-        box-shadow: 0 0 10px black;
-    }
+  .main-widgets-container {
+    width: fit-content;
+    height: auto;
+    overflow: hidden;
+    margin-top: 1rem;
+    display: flex;
+    border-radius: 25px;
+    box-shadow: 0 0 10px black;
+  }
 
-    #nav-bar-main {
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        flex-wrap: nowrap;
-    }
+  #nav-bar-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    flex-wrap: nowrap;
+  }
 
-    .search-box {
-        border-radius: 10px;
-        border: 0;
-    }
+  .search-box {
+    border-radius: 10px;
+    border: 0;
+  }
 
-    .search-box:focus{
-        border-color: none;
-        box-shadow: 0 0 10px black;
-    }
+  .search-box:focus {
+    border-color: none;
+    box-shadow: 0 0 10px black;
+  }
 
-    .search-box input {
-        border-radius: 10px;
-        margin-top: 1rem;
-        width: 13vw;
-        height: 3rem;
-        text-align: center;
-    }
+  .search-box input {
+    border-radius: 10px;
+    margin-top: 1rem;
+    width: 13vw;
+    height: 3rem;
+    text-align: center;
+  }
 
-    .navbar {
-        background-color: var(--widgetcolor-day);
-        width: 20vw;
-        height: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        flex-direction: column;
-    }
+  .navbar {
+    background-color: var(--widgetcolor-day);
+    width: 20vw;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+  }
 
-    .navbar-ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-    }
+  .navbar-ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
 
-    .navbar-ul .row {
-        display: flex;
-        flex-wrap: nowrap;
-        flex-direction: column;
-        justify-content: center;
-    }
+  .navbar-ul .row {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-    .navbar-ul li {
-        background-color: white;
-        width: 20vw;
-        padding-top: .6rem;
-        padding-bottom: .6rem;
-        border-radius: 0;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        cursor: default;
-    }
+  .navbar-ul li {
+    background-color: white;
+    width: 20vw;
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+    border-radius: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    cursor: default;
+  }
 
-    .navbar-ul li:hover {
-        background-color: var(--background-color-day);
-        transition-duration: 600ms;
-    }
+  .navbar-ul li:hover {
+    background-color: var(--background-color-day);
+    transition-duration: 600ms;
+  }
 
-    #nav-container ul {
-        padding-left: 0;
-        height: 15vh;
-    }
+  #nav-container ul {
+    padding-left: 0;
+    height: 15vh;
+  }
 
-    #nav-container {
-        display: flex;
-        flex-direction: column;
-        padding-right: 0;
-        padding-left: 0;
-        margin-top: 0;
-        width: auto;
-    }
+  #nav-container {
+    display: flex;
+    flex-direction: column;
+    padding-right: 0;
+    padding-left: 0;
+    margin-top: 0;
+    width: auto;
+  }
 
-    #nav-container li {
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        height: 15vh;
-    }
+  #nav-container li {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 15vh;
+  }
 
-    .row input {
-        width: 100%;
-        height: auto;
-        border: 0;
-        text-align: center;
-        margin-top: 0;
-        font-size: 1.4rem;
-        font-weight: 600;
-        font-family: var(--main-font);
-        background-color: white;
-    }
+  .row input {
+    width: 100%;
+    height: auto;
+    border: 0;
+    text-align: center;
+    margin-top: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: var(--main-font);
+    background-color: white;
+  }
 
-    .row h1 {
-        font-size: 1.5rem;
-        
-    }
+  .row h1 {
+    font-size: 1.5rem;
 
-    .row .button-div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .btn-primary {
-        margin-top: 1rem;
-        text-align: center;
-        background-color: var(--font-color-day);
-        color: var(--font-color-night);
-        color: #EAEAEA;
-        border-radius: 5px;
-        width: 100%;
-    }
-    
-    .close-button {
-        border: 0;
-        background-color: var(--font-color-day);
-        color: var(--font-color-night);
-        width: 5rem;
-        margin-top: .3rem;
-        border-radius: 5px;
-        padding-top: .1rem;
-        padding-bottom: .3rem;
-    }
+  }
 
-    .weather-widget-main {
-        display: flex;
-        flex-wrap: wrap;
-        
-        flex-direction: row;
-        justify-content: space-evenly;
-        margin-top: 1rem;
-        width: 50vw;
-        
-    }
+  .row .button-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-primary {
+    margin-top: 1rem;
+    text-align: center;
+    background-color: var(--font-color-day);
+    color: var(--font-color-night);
+    color: #EAEAEA;
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  .close-button {
+    border: 0;
+    background-color: var(--font-color-day);
+    color: var(--font-color-night);
+    width: 5rem;
+    margin-top: .3rem;
+    border-radius: 5px;
+    padding-top: .1rem;
+    padding-bottom: .3rem;
+  }
+
+  .weather-widget-main {
+    display: flex;
+    flex-wrap: wrap;
+
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    width: 50vw;
+
+  }
 
 
-    .status-widget-1 {
-        margin: 0;
-        margin-left: 4rem;
-        width: 15vw;
-    }
-    .status-widget-2 {
-        margin: 0;
-        width: 20vw;
-        height: 50vh;
-        margin-top: 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .status-widget-1 {
+    margin: 0;
+    margin-left: 4rem;
+    width: 15vw;
+  }
+
+  .status-widget-2 {
+    margin: 0;
+    width: 20vw;
+    height: 50vh;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
     .image-container {
         background-color: var(--widgetcolor-day);
@@ -728,10 +734,10 @@ footer a {
         height: 15rem;
     }
 
-    .image-container > img {
-        width: 7rem;
-        margin-top: 1rem;
-    }
+  .image-container>img {
+    width: 7rem;
+    margin-top: 1rem;
+  }
 
     .image-container > h1 {
         font-size: 1.4rem;
@@ -740,94 +746,94 @@ footer a {
         padding-right: .5rem;
     }
 
-    .forecast-widget-main {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        margin-top: 0;
-        width: 100%;
-        height: fit-content;
-    }
+  .forecast-widget-main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 0;
+    width: 100%;
+    height: fit-content;
+  }
 
-    .status-div{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center ;
-        margin: .6rem;
-    }
-
-    .status-div img {
-        width: 1.5rem;
-    }
-
-    .widget-details {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-left: 1rem;
-        width: 3.5rem;
-    }
-
-    .current-weather-details {
-        width: 20vw;
-        margin-top: 1.5rem;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
-   .weather-detail-row {
+  .status-div {
     display: flex;
     flex-direction: row;
-   }
+    align-items: center;
+    justify-content: center;
+    margin: .6rem;
+  }
 
-    .widget-details p {
-        margin-bottom: 0;
-        text-align: left;
-        font-size: .7rem;
-        font-weight: bold;
-    }
+  .status-div img {
+    width: 1.5rem;
+  }
+
+  .widget-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1rem;
+    width: 3.5rem;
+  }
+
+  .current-weather-details {
+    width: 20vw;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .weather-detail-row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .widget-details p {
+    margin-bottom: 0;
+    text-align: left;
+    font-size: .7rem;
+    font-weight: bold;
+  }
 
 
-    /* FORECAST TAB */
+  /* FORECAST TAB */
 
-    .forecast-tab {
-        background-color: white;
-        border-radius: 10px;
-        width: 6rem;
-        height: 7rem;
-        margin-top: 25px;
-        margin: 1rem;
-        display: flex;
-        justify-content: center;
+  .forecast-tab {
+    background-color: white;
+    border-radius: 10px;
+    width: 6rem;
+    height: 7rem;
+    margin-top: 25px;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
 
-    }
+  }
 
-    .forecast-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-    }
+  .forecast-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .forecast-day {
-        font-size: .7rem;
-        text-align: center;
-        margin-top: 2rem;
-    }
+  .forecast-day {
+    font-size: .7rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
 
-    .forecast-container > img {
-        margin-top: 1rem;
-        width: 3rem;
-    }
+  .forecast-container>img {
+    margin-top: 1rem;
+    width: 3rem;
+  }
 
-    main {
-        display: flex;
-        justify-content: center;
-        width: fit-content;
-    }
+  main {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+  }
 
     
 footer {
