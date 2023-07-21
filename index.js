@@ -165,11 +165,11 @@ const successCallback = (position) => {
 
         const body = document.body;
         if (hours >= 6 && hours < 18){
-            document.body.style.backgroundImage = "url('./photo/background-day.jpg')";
+            body.style.backgroundImage = "url('./photo/background-day.jpg')";
             console.log("day");
         }
         else {
-            document.body.style.backgroundImage = "url('./photo/background-night.jpg')";
+            body.style.backgroundImage = "url('./photo/background-night.jpg')";
             console.log("night");
         }
     }
