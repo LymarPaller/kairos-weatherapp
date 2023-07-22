@@ -188,10 +188,6 @@ function setBackground(){
         "url('./photo/background-night.jpg')";
       onsole.log("night");
     }
-    else {
-        body.style.backgroundImage = "url('./photo/background-night.jpg')";
-        console.log("night");
-    }
 }
 
 
@@ -497,11 +493,7 @@ const getCityName = () => {
         dayElement.textContent = dayOfWeek;
       }
 
-      function setBackground() {
-        const date = new Date();
-        const hours = date.getHours();
-
-        const body = document.body;
+      function setBackground(hours) {
         if (hours >= 6 && hours < 18) {
           document.body.style.backgroundImage =
             "url('./photo/background-day.jpg')";
@@ -512,8 +504,8 @@ const getCityName = () => {
           console.log("night");
         }
       }
-
-      setBackground();
+      const localTime = new Date(data.location.localtime);
+      setBackground(localTime.getHours());
       setInterval(setBackground, 60000);
 
             // STORES FORECAST CONDITION TO CORRESPONDING DAY
@@ -562,7 +554,7 @@ const getCityName = () => {
 
             // sets current time and current date
 
-            const localTime = new Date(data.location.localtime);
+            
 
             const weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
             const dayOfWeek = weekday[localTime.getDay()];
@@ -583,6 +575,8 @@ const getCityName = () => {
       secondCurrentDay.textContent = `${dayOfWeek}`;
     });
 };
+
+
 
 const inputElement = document.getElementById('first-search-box');
 inputElement.addEventListener('input', () => {
@@ -739,6 +733,8 @@ const getCityName2 = () => {
             
             });
 };
+setBackground(localTime.getHours());
+setInterval(setBackground, 60000);
 
 const inputElement2 = document.getElementById('second-search-box');
 inputElement2.addEventListener('input', () => {
