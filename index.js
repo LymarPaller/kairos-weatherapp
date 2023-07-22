@@ -180,13 +180,13 @@ function setBackground(){
     const hours = today.getHours();
 
     const body = document.body;
-    if (hours >= 6 && hours < 18){
-        body.style.backgroundImage = "url('./photo/background-day.jpg')";
-        console.log("day");
-    }
-    else {
-        body.style.backgroundImage = "url('./photo/background-night.jpg')";
-        console.log("night");
+    if (hours >= 6 && hours < 18) {
+      document.body.style.backgroundImage = "url('./photo/background-day.jpg')";
+      console.log("day");
+    } else {
+      document.body.style.backgroundImage =
+        "url('./photo/background-night.jpg')";
+      onsole.log("night");
     }
 }
 
@@ -229,19 +229,21 @@ const successCallback = (position) => {
             firstTabCity.textContent = `${currentCity}`;
             firstTabState.textContent = `${currentState}`;
 
-            // fetch weather forecast API and apply current city and state in API URL
-            
-            fetch(`https://api.weatherapi.com/v1/forecast.json?key=${forecastAPIKEY}%20&q=${currentCity},${currentState}&days=7&aqi=no&alerts=no`)
-                .then((result) => {
-                    if (result.ok) {
-                        return result.json();
-                    }
-                    else {
-                        console.log('error');
-                    }
-                })
-                .then((data) => {
-                    // assign data to variables
+      // fetch weather forecast API and apply current city and state in API URL
+
+      fetch(
+        `https://api.weatherapi.com/v1/forecast.json?key=${forecastAPIKEY}%20&q=${currentCity},${currentState}&days=7&aqi=no&alerts=no`
+      )
+        .then((result) => {
+          if (result.ok) {
+            return result.json();
+          } else {
+            console.log("error");
+          }
+        })
+
+        .then((data) => {
+          // assign data to variables
 
                     const current = data.current;
                     const forecast = data.forecast
@@ -262,26 +264,28 @@ const successCallback = (position) => {
                     currentSunriseTime.textContent = `${currentSunRise}`;
                     currentSunsetTime.textContent = `${currentSunSet}`;
 
-                    let isCelsius = true;
-                    temp.textContent = `${currentTempC}`;
+          const isCelsius = true;
+          temp.textContent = `${currentTempC}`;
 
-                    function displayTemperature() {
-                        if(isCelsius){
-                            tempElement.textContent = "°C";
-                            temp.textContent = `${currentTempC}`;
-                        }
-                        else{
-                            tempElement.textContent = "°F";
-                            temp.textContent = `${currentTempF}`;
-                        }
-                    }
-        
-                    function toggleUnits(){
-                        isCelsius = !isCelsius;
-                        displayTemperature();
-                    }
-        
-                    document.getElementById("widget-temp").addEventListener("click",toggleUnits);
+          function displayTemperature() {
+            const tempElement = document.getElementById("setForC");
+            if (isCelsius) {
+              tempElement.textContent = "°C";
+              temp.textContent = `${currentTempC}`;
+            } else {
+              tempElement.textContent = "°F";
+              temp.textContent = `${currentTempF}`;
+            }
+          }
+
+          function toggleUnits() {
+            isCelsius = !isCelsius;
+            displayTemperature();
+          }
+
+          document
+            .getElementById("widget-temp")
+            .addEventListener("click", toggleUnits);
 
                     //FORECAST
 
@@ -485,29 +489,24 @@ const getCityName = () => {
             const date = new Date(dateStr);
             const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
 
-            const dayElement = document.getElementById(`day-${i}-second`);
-            dayElement.textContent = dayOfWeek;
-            
-            }
-    
-            function setBackground(){
-                const date = new Date();
-                const hours = date.getHours();
-            
-                const body = document.body;
-                if (hours >= 6 && hours < 18){
-                    document.body.style.backgroundImage = "url('./photo/background-day.jpg')";
-                    console.log("day");
-                }
-                else {
-                    document.body.style.backgroundImage = "url('./photo/background-night.jpg')";
-                    console.log("night");
-                }
-            }
-            
-            setBackground();
-            setInterval(setBackground,60000);
-            
+        const dayElement = document.getElementById(`day-${i}-second`);
+        dayElement.textContent = dayOfWeek;
+      }
+
+      function setBackground(hours) {
+        if (hours >= 6 && hours < 18) {
+          document.body.style.backgroundImage =
+            "url('./photo/background-day.jpg')";
+          console.log("day");
+        } else {
+          document.body.style.backgroundImage =
+            "url('./photo/background-night.jpg')";
+          console.log("night");
+        }
+      }
+      const localTime = new Date(data.location.localtime);
+      setBackground(localTime.getHours());
+      setInterval(setBackground, 60000);
 
             // STORES FORECAST CONDITION TO CORRESPONDING DAY
             
@@ -555,7 +554,7 @@ const getCityName = () => {
 
             // sets current time and current date
 
-            const localTime = new Date(data.location.localtime);
+            
 
             const weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
             const dayOfWeek = weekday[localTime.getDay()];
@@ -570,13 +569,14 @@ const getCityName = () => {
             const curMeridiem = localTime.getHours() >= 12 ? "PM" : "AM";
             const currentDay = curMonth + " " + dayOfMonth + ", " + curYear;
 
-            secondCurrentTime.textContent = `${curHour}:${curMinute}`;
-            secondtAMPM.textContent = `${curMeridiem}`;
-            secondDate.textContent = `${curMonth} ${dayOfMonth}, ${curYear}`;
-            secondCurrentDay.textContent = `${dayOfWeek}`;
-
-            });
+      secondCurrentTime.textContent = `${curHour}:${curMinute}`;
+      secondtAMPM.textContent = `${curMeridiem}`;
+      secondDate.textContent = `${curMonth} ${dayOfMonth}, ${curYear}`;
+      secondCurrentDay.textContent = `${dayOfWeek}`;
+    });
 };
+
+
 
 const inputElement = document.getElementById('first-search-box');
 inputElement.addEventListener('input', () => {
@@ -733,6 +733,8 @@ const getCityName2 = () => {
             
             });
 };
+setBackground(localTime.getHours());
+setInterval(setBackground, 60000);
 
 const inputElement2 = document.getElementById('second-search-box');
 inputElement2.addEventListener('input', () => {
