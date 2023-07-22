@@ -1015,13 +1015,6 @@ const getCityName2 = () => {
 
       // SETS IMAGE SOURCE FOR EACH FORECAST
 
-<<<<<<< HEAD
-            thirdCurrentTime.textContent = `${curHour}:${curMinute}`;
-            thirdtAMPM.textContent = `${curMeridiem}`;
-            thirdDate.textContent = `${curMonth} ${dayOfMonth}, ${curYear}`;
-            thirdCurrentDay.textContent = `${dayOfWeek}`;
-                      });
-=======
       thirdState.textContent = `${country}`;
       thirdCurrentWeather.textContent = `${currentConditionTextThird}`;
       thirdCurrentTemp.textContent = `${currentTempC}`;
@@ -1084,7 +1077,6 @@ const getCityName2 = () => {
       thirdDate.textContent = `${curMonth} ${dayOfMonth}, ${curYear}`;
       thirdCurrentDay.textContent = `${dayOfWeek}`;
     });
->>>>>>> 5145a4c9539a5f16c190e7a8b792161ccb0ab7ce
 };
 
 const inputElement2 = document.getElementById("second-search-box");
