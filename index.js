@@ -23,6 +23,8 @@ const amPm = document.getElementById('am-pm');
 const weatherImageSrc = document.getElementById('current-weather-img');
 const currentSunriseTime = document.getElementById('sunrise-main');
 const currentSunsetTime = document.getElementById('sunset-main');
+const tempElement = document.getElementById("setForC");
+tempElement.textContent = "°C";
 
 // variable for 2nd City div
 
@@ -72,6 +74,29 @@ const weatherImageSrcFourth = document.getElementById('current-weather-img-fourt
 const tempFourth = document.getElementById('temp_set-fourth')
 const sunriseFourth = document.getElementById('sunrise-fourth');
 const sunsetFourth = document.getElementById('sunset-fourth');
+                                
+//ANIMATIONS 
+const timeWidget = document.querySelector(".status-widget-1")
+const forecastDayAnim = document.querySelectorAll(".forecast-container .forecast-day")
+const forecastImgAnimA = document.querySelectorAll("#main-city .forecast-container #forecast-weather-img-a")
+const forecastImgAnimB = document.querySelectorAll("#main-city .forecast-container #forecast-weather-img-b")
+const forecastImgAnimC = document.querySelectorAll("#main-city .forecast-container #forecast-weather-img-c")
+const forecastImgAnimD = document.querySelectorAll("#main-city .forecast-container #forecast-weather-img-d")
+const forecastImgAnimE = document.querySelectorAll("#main-city .forecast-container #forecast-weather-img-e")
+const forecastImgAnimF = document.querySelectorAll("#main-city .forecast-container #forecast-weather-img-f")
+
+const tl = new TimelineMax();
+
+tl.fromTo(timeWidget,2, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut})
+.fromTo(weatherImageSrc,3, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2")
+.fromTo(currentWeather,3, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2")
+.fromTo(forecastDayAnim,2, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=3")
+.fromTo(forecastImgAnimA,2, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+.fromTo(forecastImgAnimB,2.25, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+.fromTo(forecastImgAnimC,2.50, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+.fromTo(forecastImgAnimD,2.75, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+.fromTo(forecastImgAnimE,3, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+.fromTo(forecastImgAnimF,3.25, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
 
 // sets current time and current date
 
@@ -241,7 +266,6 @@ const successCallback = (position) => {
                     temp.textContent = `${currentTempC}`;
 
                     function displayTemperature() {
-                    const tempElement = document.getElementById("setForC");
                         if(isCelsius){
                             tempElement.textContent = "°C";
                             temp.textContent = `${currentTempC}`;
@@ -258,8 +282,7 @@ const successCallback = (position) => {
                     }
         
                     document.getElementById("widget-temp").addEventListener("click",toggleUnits);
-                    
-                    
+
                     //FORECAST
 
                     const forecastDays = [];
@@ -400,8 +423,35 @@ const getCityName = () => {
             sunriseSecond.textContent = `${currentSunRise}`;
             sunsetSecond.textContent = `${currentSunSet}`;
 
+            //ANIMATIONS 
+            const timeWidget = document.querySelector(".city-one .status-widget-1")
+            const forecastDayAnim = document.querySelectorAll(".city-one .forecast-container .forecast-day")
+            const forecastImgAnimA = document.querySelectorAll(".city-one .forecast-container #second-forecast-weather-img-a")
+            const forecastImgAnimB = document.querySelectorAll(".city-one .forecast-container #second-forecast-weather-img-b")
+            const forecastImgAnimC = document.querySelectorAll(".city-one .forecast-container #second-forecast-weather-img-c")
+            const forecastImgAnimD = document.querySelectorAll(".city-one .forecast-container #second-forecast-weather-img-d")
+            const forecastImgAnimE = document.querySelectorAll(".city-one .forecast-container #second-forecast-weather-img-e")
+            const forecastImgAnimF = document.querySelectorAll(".city-one .forecast-container #second-forecast-weather-img-f")
+
+            const tl = new TimelineMax();
+
+            tl.fromTo(timeWidget,2, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut})
+            .fromTo(weatherImageSrcSecond,3, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2")
+            .fromTo(secondCurrentWeather,3, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2")
+            .fromTo(forecastDayAnim,2, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=3")
+            .fromTo(forecastImgAnimA,2, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+            .fromTo(forecastImgAnimB,2.25, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+            .fromTo(forecastImgAnimC,2.50, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+            .fromTo(forecastImgAnimD,2.75, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+            .fromTo(forecastImgAnimE,3, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+            .fromTo(forecastImgAnimF,3.25, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+            
+            //DISPLAY TEMPERATURE C AND F
             let isCelsius = true;
-            tempSecond.textContent = `${currentTempC}`;
+            tempSecond.textContent = `${currentTempC}°C`;
+            const tempElement = document.getElementById("setForC-second");
+            tempElement.textContent = "°C";
+
             function displayTemperature() {
                 const tempElement = document.getElementById("setForC-second");
                 if(isCelsius){
@@ -566,11 +616,12 @@ const getCityName2 = () => {
 
             sunriseThird.textContent = `${currentSunRise}`;
             sunsetThird.textContent = `${currentSunSet}`;
+            const tempElement = document.getElementById("setForC-third");
+            tempElement.textContent = "°C";
+            
 
             let isCelsius = true;
-            tempThird.textContent = `${currentTempC}`;
                 function displayTemperature() {
-                    const tempElement = document.getElementById("setForC-third");
                     if(isCelsius){
                         tempElement.textContent = "°C";
                         tempThird.textContent = `${currentTempC}`;
@@ -588,6 +639,28 @@ const getCityName2 = () => {
 
             document.getElementById("widget-temp-third").addEventListener("click",toggleUnits);
             
+            //ANIMATIONS 
+            const timeWidget = document.querySelectorAll(".city-two .status-widget-1")
+            const forecastDayAnim = document.querySelectorAll(".city-two .forecast-container .forecast-day")
+            const forecastImgAnimA = document.querySelectorAll(".city-two .forecast-container #third-forecast-weather-img-a")
+            const forecastImgAnimB = document.querySelectorAll(".city-two .forecast-container #third-forecast-weather-img-b")
+            const forecastImgAnimC = document.querySelectorAll(".city-two .forecast-container #third-forecast-weather-img-c")
+            const forecastImgAnimD = document.querySelectorAll(".city-two .forecast-container #third-forecast-weather-img-d")
+            const forecastImgAnimE = document.querySelectorAll(".city-two .forecast-container #third-forecast-weather-img-e")
+            const forecastImgAnimF = document.querySelectorAll(".city-two .forecast-container #third-forecast-weather-img-f")
+
+            const tl = new TimelineMax();
+
+            tl.fromTo(timeWidget,2, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut})
+            .fromTo(weatherImageSrcThird,3, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2")
+            .fromTo(thirdCurrentWeather,3, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2")
+            .fromTo(forecastDayAnim,2, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=3")
+            .fromTo(forecastImgAnimA,2, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+            .fromTo(forecastImgAnimB,2.25, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+            .fromTo(forecastImgAnimC,2.50, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+            .fromTo(forecastImgAnimD,2.75, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+            .fromTo(forecastImgAnimE,3, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+            .fromTo(forecastImgAnimF,3.25, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
 
             //FORECAST
             const forecastDays2 = [];
@@ -700,11 +773,12 @@ const getCityName3 = () => {
 
             sunriseFourth.textContent = `${currentSunRise}`;
             sunsetFourth.textContent = `${currentSunSet}`;
+            const tempElement = document.getElementById("setForC-fourth");
+            tempElement.textContent = "°C";
 
             let isCelsius = true;
             tempFourth.textContent = `${currentTempC}`;
                 function displayTemperature() {
-                    const tempElement = document.getElementById("setForC-fourth");
                     if(isCelsius){
                         tempElement.textContent = "°C";
                         tempFourth.textContent = `${currentTempC}`;
@@ -722,6 +796,30 @@ const getCityName3 = () => {
 
             document.getElementById("widget-temp-fourth").addEventListener("click",toggleUnits);
             
+             
+            //ANIMATIONS 
+            const timeWidget = document.querySelectorAll(".city-three .status-widget-1")
+            const forecastDayAnim = document.querySelectorAll(".city-three .forecast-container .forecast-day")
+            const forecastImgAnimA = document.querySelectorAll(".city-three .forecast-container #fourth-forecast-weather-img-a")
+            const forecastImgAnimB = document.querySelectorAll(".city-three .forecast-container #fourth-forecast-weather-img-b")
+            const forecastImgAnimC = document.querySelectorAll(".city-three .forecast-container #fourth-forecast-weather-img-c")
+            const forecastImgAnimD = document.querySelectorAll(".city-three .forecast-container #fourth-forecast-weather-img-d")
+            const forecastImgAnimE = document.querySelectorAll(".city-three .forecast-container #fourth-forecast-weather-img-e")
+            const forecastImgAnimF = document.querySelectorAll(".city-three .forecast-container #fourth-forecast-weather-img-f")
+
+            const tl = new TimelineMax();
+
+            tl.fromTo(timeWidget,2, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut})
+            .fromTo(weatherImageSrcFourth,3, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2")
+            .fromTo(fourthCurrentWeather,3, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2")
+            .fromTo(forecastDayAnim,2, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=3")
+            .fromTo(forecastImgAnimA,2, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+            .fromTo(forecastImgAnimB,2.25, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+            .fromTo(forecastImgAnimC,2.50, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+            .fromTo(forecastImgAnimD,2.75, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+            .fromTo(forecastImgAnimE,3, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+            .fromTo(forecastImgAnimF,3.25, {opacity: "0"}, {opacity: "1", ease: Power2.easeInOut}, "-=2.5")
+
             //FORECAST
             const forecastDays2 = [];
 
@@ -737,8 +835,6 @@ const getCityName3 = () => {
             dayElement.textContent = dayOfWeek;
             
             }
-
-            
 
             // STORES FORECAST CONDITION TO CORRESPONDING DAY
                         
