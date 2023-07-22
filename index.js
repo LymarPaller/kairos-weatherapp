@@ -1,4 +1,5 @@
 // const forecastAPI = `https://api.weatherapi.com/v1/forecast.json?key=ad6a22d37a6e4fdeb45135830230707%20&q=${currentCity}&days=7&aqi=no&alerts=no`;
+
 // cosnt geoLocAPI2 = `https://api.openweathermap.org/geo/1.0/reverse?lat=10.6066483&lon=123.0404676&appid=42207e457e3eb8b6df3dd8146f5bfc1b`
 
 const geoLocAPIKEY = "42207e457e3eb8b6df3dd8146f5bfc1b";
@@ -202,12 +203,11 @@ const successCallback = (position) => {
 
     const body = document.body;
     if (hours >= 6 && hours < 18) {
-      document.body.style.backgroundImage = "url('./photo/background-day.jpg')";
+      body.style.backgroundImage = "url('./photo/background-day.jpg')";
       console.log("day");
     } else {
-      document.body.style.backgroundImage =
-        "url('./photo/background-night.jpg')";
-      onsole.log("night");
+      body.style.backgroundImage = "url('./photo/background-night.jpg')";
+      console.log("night");
     }
   }
 
@@ -252,7 +252,6 @@ const successCallback = (position) => {
             console.log("error");
           }
         })
-
         .then((data) => {
           // assign data to variables
 
@@ -277,7 +276,6 @@ const successCallback = (position) => {
 
           const isCelsius = true;
           temp.textContent = `${currentTempC}`;
-
           function displayTemperature() {
             const tempElement = document.getElementById("setForC");
             if (isCelsius) {
@@ -477,10 +475,8 @@ const getCityName = () => {
         dayElement.textContent = dayOfWeek;
       }
 
-      function setBackground() {
-        const date = new Date();
-        const hours = date.getHours();
-
+      function setBackground(hours) {
+        
         const body = document.body;
         if (hours >= 6 && hours < 18) {
           document.body.style.backgroundImage =
@@ -493,8 +489,7 @@ const getCityName = () => {
         }
       }
 
-      setBackground();
-      setInterval(setBackground, 60000);
+
 
       // STORES FORECAST CONDITION TO CORRESPONDING DAY
 
@@ -607,6 +602,8 @@ const getCityName = () => {
       secondtAMPM.textContent = `${curMeridiem}`;
       secondDate.textContent = `${curMonth} ${dayOfMonth}, ${curYear}`;
       secondCurrentDay.textContent = `${dayOfWeek}`;
+      setBackground(localTime.getHours());
+      setInterval(setBackground, 60000);
     });
 };
 
