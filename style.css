@@ -408,7 +408,7 @@ body {
 .forecast-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
 }
 
@@ -814,7 +814,7 @@ footer a {
   .forecast-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
   }
 
