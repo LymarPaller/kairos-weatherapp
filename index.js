@@ -186,9 +186,14 @@ function setBackground(){
     } else {
       document.body.style.backgroundImage =
         "url('./photo/background-night.jpg')";
-      onsole.log("night");
+      console.log("night");
     }
 }
+
+
+const localTime = new Date();
+setBackground(localTime.getHours());
+setInterval(setBackground, 60000);
 
 
 // get postion coordinate for longitude and latitude 
@@ -730,11 +735,8 @@ const getCityName2 = () => {
             thirdtAMPM.textContent = `${curMeridiem}`;
             thirdDate.textContent = `${curMonth} ${dayOfMonth}, ${curYear}`;
             thirdCurrentDay.textContent = `${dayOfWeek}`;
-            
-            });
+                      });
 };
-setBackground(localTime.getHours());
-setInterval(setBackground, 60000);
 
 const inputElement2 = document.getElementById('second-search-box');
 inputElement2.addEventListener('input', () => {
