@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kairos | Weather App</title>
-    <link rel="icon" type="image/x-icon" href="./photo/kairos-logo.png" />
+    <link rel="icon" type="image/x-icon" href="./photo/kairos-icon.png">
 
     <!-- FONT AWESOME LINK -->
     <link
@@ -128,7 +128,7 @@
               >
                 <span></span>
                 <p class="temp" id="temp_set"></p>
-                <span><p id="setForC">°C</p></span
+                <span><p id="setForC"></p></span
                 ><!-- api current.temp_c -->
               </div>
             </div>
@@ -142,7 +142,7 @@
                   <div class="status-div">
                     <img src="./photo/status-icon/windspeed.svg" />
                     <div class="widget-details">
-                      <p id="wind-speed"></p>
+                      <p id="wind-speed">0kph</p>
                       <!-- api current.wind_kph -->
                       <p>Windspeed</p>
                     </div>
@@ -151,7 +151,7 @@
                   <div class="status-div">
                     <img src="./photo/status-icon/rainchance.svg" />
                     <div class="widget-details">
-                      <p id="chance-of-rain"></p>
+                      <p id="chance-of-rain">0%</p>
                       <!-- api current.humidity disregard class name-->
                       <p>Humidity</p>
                     </div>
@@ -227,22 +227,22 @@
         <!-- 2nd city div -->
         <div class="city-one weather-all-detail-div2" style="display: none">
           <div class="weather-widget-main">
-            <div class="status-widget-1">
+            <div class="status-widget-1" id="status-widget-1-second">
               <div class="time-format">
-                <h1 class="widget-time" id="widget-time-second">00:00</h1>
-                <span id="am-pm-second" class="am-pm">PM</span>
+                <h1 class="widget-time" id="widget-time-second"></h1>
+                <span id="am-pm-second" class="am-pm"></span>
                 <!-- ALSO FIXED MERRIDIAN -->
               </div>
-              <p class="widget-date" id="widget-date-second">July 01, 2023</p>
-              <h1 class="widget-day" id="widget-day-second">MONDAY</h1>
+              <p class="widget-date" id="widget-date-second"></p>
+              <h1 class="widget-day" id="widget-day-second"></h1>
               <div
                 id="widget-temp-second"
                 class="widget-temp"
                 title="Click to convert to other units"
               >
                 <span></span>
-                <p class="temp" id="temp_set-second">30</p>
-                <span><p id="setForC-second">°C</p></span
+                <p class="temp" id="temp_set-second"></p>
+                <span><p id="setForC-second"></p></span
                 ><!-- api current.temp_c -->
               </div>
             </div>
@@ -252,7 +252,7 @@
                 id="current-weather-container-second"
               >
                 <img id="current-weather-img-second" src="" alt="" />
-                <h1 id="current-weather-second">Please enter your City</h1>
+                <h1 id="current-weather-second"></h1>
               </div>
               <div class="current-weather-details">
                 <div class="weather-detail-row">
@@ -346,20 +346,20 @@
           <div class="weather-widget-main">
             <div class="status-widget-1">
               <div class="time-format">
-                <h1 class="widget-time" id="widget-time-third">00:00</h1>
-                <span id="am-pm-third" class="am-pm">PM</span>
+                <h1 class="widget-time" id="widget-time-third"></h1>
+                <span id="am-pm-third" class="am-pm"></span>
                 <!-- ALSO FIXED MERRIDIAN -->
               </div>
-              <p class="widget-date" id="widget-date-third">July 01, 2023</p>
-              <h1 class="widget-day" id="widget-day-third">MONDAY</h1>
+              <p class="widget-date" id="widget-date-third"></p>
+              <h1 class="widget-day" id="widget-day-third"></h1>
               <div
                 id="widget-temp-third"
                 class="widget-temp"
                 title="Click to convert to other units"
               >
                 <span></span>
-                <p class="temp" id="temp_set-third">30</p>
-                <span><p id="setForC-third">°C</p></span
+                <p class="temp" id="temp_set-third"></p>
+                <span><p id="setForC-third"></p></span
                 ><!-- api current.temp_c -->
               </div>
             </div>
@@ -456,24 +456,24 @@
         </div>
 
         <!-- 4th city div -->
-        <div class="city-two weather-all-detail-div2" style="display: none">
+        <div class="city-three weather-all-detail-div2" style="display: none">
           <div class="weather-widget-main">
             <div class="status-widget-1">
               <div class="time-format">
-                <h1 class="widget-time" id="widget-time-fourth">00:00</h1>
-                <span id="am-pm-fourth" class="am-pm">PM</span>
+                <h1 class="widget-time" id="widget-time-fourth"></h1>
+                <span id="am-pm-fourth" class="am-pm"></span>
                 <!-- ALSO FIXED MERRIDIAN -->
               </div>
-              <p class="widget-date" id="widget-date-fourth">July 01, 2023</p>
-              <h1 class="widget-day" id="widget-day-fourth">MONDAY</h1>
+              <p class="widget-date" id="widget-date-fourth"></p>
+              <h1 class="widget-day" id="widget-day-fourth"></h1>
               <div
                 id="widget-temp-fourth"
                 class="widget-temp"
                 title="Click to convert to other units"
               >
                 <span></span>
-                <p class="temp" id="temp_set-fourth">30</p>
-                <span><p id="setForC-fourth">°C</p></span
+                <p class="temp" id="temp_set-fourth"></p>
+                <span><p id="setForC-fourth"></p></span
                 ><!-- api current.temp_c -->
               </div>
             </div>
@@ -574,20 +574,39 @@
       </main>
     </div>
 
-    <!-- <div class="city-one" style="display:none;">
-        <h1>Page 1</h1>
-    </div>
+    <footer>
+        <p class="copyright-footer">Copyright © 2023 Kairos Weather App</p>
+        <div class="footer-partition-details">
+            <div class="main-collab">
+                <p>Collaborators:</p>
+                <div class="footer-row">
+                    <div class="collab">
+                        <p class="collab-name">Lymar Paul Paller</p>
+                        <div class="email-container">
+                            <i class="fa-solid fa-envelope"></i>
+                            <a class="collab-email" href="mailto: lymar.paller101@gmail.com">lymar.paller101@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="collab">
+                        <p class="collab-name">Daniah Muti</p>
+                        <div class="email-container">
+                            <i class="fa-solid fa-envelope"></i>
+                            <a class="collab-email" href="mailto: daniahmuti@gmail.com">daniahmuti@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="weather-credit">
+                <p>Sources:</p>
+                <p>Weather data provided by <a href="https://www.weatherapi.com/">https://www.weatherapi.com/</a></p>
+                <p>Geo Location data provided by <a href="https://openweathermap.org/">https://openweathermap.org/</a></p>
+            </div>
+        </div>
+    </footer>
+    <!-- ANIMATION -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
-    <div class="city-two" style="display:none;">
-        <h1>Page 2</h1>
-    </div>
-    
-    <div class="city-three" style="display:none;">
-        <h1>Page 3</h1>
-    </div> -->
-
-    <footer></footer>
-
     <!-- BOOTSTRAP SCRIPT -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
