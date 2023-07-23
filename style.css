@@ -271,9 +271,9 @@ body {
 /* MAIN CONTAINER */
 
 .weather-widget-main {
-  display: inline-flex !important;
+  display: inline-flex;
   flex-direction: column;
-  justify-content: space-between !important;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
 
@@ -738,7 +738,6 @@ footer a {
   .weather-widget-main {
     display: flex;
     flex-wrap: wrap;
-
     flex-direction: row;
     justify-content: space-evenly;
     margin-top: 1rem;
@@ -749,7 +748,6 @@ footer a {
 
   .status-widget-1 {
     margin: 0;
-    margin-left: 4rem;
     width: 15vw;
     /* padding-right: 200px; */
   }
