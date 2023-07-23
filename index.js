@@ -311,7 +311,7 @@ const successCallback = (position) => {
   // sets night and day background functio
 
   setBackground();
-  setInterval(setBackground, 60000);
+  // setInterval(setBackground, 60000);
 
   // fetch geoAPI and apply latitude and latitude to API URL
 
@@ -689,7 +689,7 @@ const getCityName = () => {
       }
       const localTime = new Date(data.location.localtime);
       setBackground(localTime.getHours());
-      setInterval(setBackground, 60000);
+      // setInterval(setBackground, 60000);
 
       // STORES FORECAST CONDITION TO CORRESPONDING DAY
 
@@ -876,7 +876,7 @@ const getCityName2 = () => {
       }
       const localTime = new Date(data.location.localtime);
       setBackground(localTime.getHours());
-      setInterval(setBackground, 60000);
+      // setInterval(setBackground, 60000);
 
       //ANIMATIONS
       const timeWidget = document.querySelectorAll(
@@ -1155,7 +1155,7 @@ const getCityName3 = () => {
         }
         const localTime = new Date(data.location.localtime);
         setBackground(localTime.getHours());
-        setInterval(setBackground, 60000);
+        // setInterval(setBackground, 60000);
 
         //ANIMATIONS
         const timeWidget = document.querySelectorAll(
