@@ -518,6 +518,15 @@ footer a {
     align-items: center;
   }
 
+  @keyframes logoAnime{
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+
   .logo-container {
     margin-top: 5vh;
     width: 90%;
@@ -525,6 +534,9 @@ footer a {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    animation: logoAnime 1.5s;
+    animation-direction: alternate-reverse;
+    animation-timing-function: ease-in-out;
   }
 
   .logo-container img {
