@@ -552,8 +552,8 @@ footer a {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    animation: logoAnime 1.5s;
-    animation-direction: alternate-reverse;
+    animation: logoAnime 1.75s;
+    animation-direction:alternate;
     animation-timing-function: ease-in-out;
   }
 
