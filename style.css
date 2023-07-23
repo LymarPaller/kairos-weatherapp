@@ -118,6 +118,8 @@ body {
     border-top-left-radius: 25px;
     padding-left: 5% !important;
     padding-right: 5% !important;
+    padding-top: 2.5% !important;
+    padding-bottom: 2.5% !important;
 }
 
 .navbar-toggler {
