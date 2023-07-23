@@ -103,6 +103,9 @@ const forecastImgAnimE = document.querySelectorAll(
 const forecastImgAnimF = document.querySelectorAll(
   "#main-city .forecast-container #forecast-weather-img-f"
 );
+const widgetTempAnim = document.querySelector(
+  "#widget-temp"
+);
 
 const tl = new TimelineMax();
 
@@ -112,6 +115,13 @@ tl.fromTo(
   { opacity: "0" },
   { opacity: "1", ease: Power2.easeInOut }
 )
+  .fromTo(
+    widgetTempAnim,
+    3,
+    { opacity: "0" },
+    { opacity: "1", ease: Power2.easeInOut },
+    "-=2.5"
+  )
   .fromTo(
     weatherImageSrc,
     3,
@@ -135,42 +145,42 @@ tl.fromTo(
   )
   .fromTo(
     forecastImgAnimA,
-    2,
+    1.75,
     { opacity: "0" },
     { opacity: "1", ease: Power2.easeInOut },
     "-=2.5"
   )
   .fromTo(
     forecastImgAnimB,
-    2.25,
+    2,
     { opacity: "0" },
     { opacity: "1", ease: Power2.easeInOut },
     "-=2.5"
   )
   .fromTo(
     forecastImgAnimC,
-    2.5,
+    2.25,
     { opacity: "0" },
     { opacity: "1", ease: Power2.easeInOut },
     "-=2.5"
   )
   .fromTo(
     forecastImgAnimD,
-    2.75,
+    2.50,
     { opacity: "0" },
     { opacity: "1", ease: Power2.easeInOut },
     "-=2.5"
   )
   .fromTo(
     forecastImgAnimE,
-    3,
+    2.75,
     { opacity: "0" },
     { opacity: "1", ease: Power2.easeInOut },
     "-=2.5"
   )
   .fromTo(
     forecastImgAnimF,
-    3.25,
+    3,
     { opacity: "0" },
     { opacity: "1", ease: Power2.easeInOut },
     "-=2.5"
@@ -374,7 +384,7 @@ const successCallback = (position) => {
           currentSunriseTime.textContent = `${currentSunRise}`;
           currentSunsetTime.textContent = `${currentSunSet}`;
 
-          const isCelsius = true;
+          let isCelsius = true;
           temp.textContent = `${currentTempC}`;
 
           function displayTemperature() {
@@ -1363,12 +1373,11 @@ const getCityName3 = () => {
         const curMeridiem = localTime.getHours() >= 12 ? "PM" : "AM";
         const currentDay = curMonth + " " + dayOfMonth + ", " + curYear;
 
-        thirdCurrentTime.textContent = `${curHour}:${curMinute}`;
-        thirdtAMPM.textContent = `${curMeridiem}`;
-        thirdDate.textContent = `${curMonth} ${dayOfMonth}, ${curYear}`;
-        thirdCurrentDay.textContent = `${dayOfWeek}`;
-      });
-  }
+      thirdCurrentTime.textContent = `${curHour}:${curMinute}`;
+      thirdtAMPM.textContent = `${curMeridiem}`;
+      thirdDate.textContent = `${curMonth} ${dayOfMonth}, ${curYear}`;
+      thirdCurrentDay.textContent = `${dayOfWeek}`;
+    });
 };
 
 const inputElement3 = document.getElementById("third-search-box");
