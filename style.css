@@ -751,7 +751,7 @@ footer a {
     margin: 0;
     margin-left: 4rem;
     width: 15vw;
-    padding-right: 200px;
+    /* padding-right: 200px; */
   }
 
   .status-widget-2 {

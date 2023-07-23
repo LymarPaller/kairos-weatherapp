@@ -374,7 +374,7 @@ const successCallback = (position) => {
           currentSunriseTime.textContent = `${currentSunRise}`;
           currentSunsetTime.textContent = `${currentSunSet}`;
 
-          const isCelsius = true;
+          let isCelsius = true;
           temp.textContent = `${currentTempC}`;
 
           function displayTemperature() {
@@ -1363,10 +1363,10 @@ const getCityName3 = () => {
         const curMeridiem = localTime.getHours() >= 12 ? "PM" : "AM";
         const currentDay = curMonth + " " + dayOfMonth + ", " + curYear;
 
-        thirdCurrentTime.textContent = `${curHour}:${curMinute}`;
-        thirdtAMPM.textContent = `${curMeridiem}`;
-        thirdDate.textContent = `${curMonth} ${dayOfMonth}, ${curYear}`;
-        thirdCurrentDay.textContent = `${dayOfWeek}`;
+        fourthCurrentTime.textContent = `${curHour}:${curMinute}`;
+        fourthtAMPM.textContent = `${curMeridiem}`;
+        fourthDate.textContent = `${curMonth} ${dayOfMonth}, ${curYear}`;
+        fourthCurrentDay.textContent = `${dayOfWeek}`;
       });
   }
 };
