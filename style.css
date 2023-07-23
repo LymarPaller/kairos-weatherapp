@@ -116,6 +116,8 @@ body {
     justify-content: flex-end !important;
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
+    padding-left: 5% !important;
+    padding-right: 5% !important;
 }
 
 .navbar-toggler {

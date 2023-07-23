@@ -1089,282 +1089,286 @@ inputElement2.addEventListener("input", () => {
 const getCityName3 = () => {
   const thirdCityName = document.getElementById("third-search-box").value;
 
-  if (thirdCityName === "") return;
-
-  fetch(
-    `https://api.weatherapi.com/v1/forecast.json?key=${forecastAPIKEY}%20&q=${thirdCityName}&days=7&aqi=no&alerts=no`
-  )
-    .then((result) => {
-      if (result.ok) {
-        return result.json();
-      } else {
-        console.log("error");
-      }
-    })
-    .then((data) => {
-      const current = data.current;
-      const forecast = data.forecast;
-      const country = data.location.country;
-      const currentConditionTextFourth = current.condition.text; // set variable for weather
-      const currentWindSpeed = current.wind_kph; //
-      const currentHumidity = current.humidity;
-      const currentTempC = current.temp_c;
-      const imageSrc = setCurrentWeatherImage(currentConditionTextFourth);
-      const currentTempF = current.temp_f;
-
-      const currentSunRise = forecast.forecastday[0].astro.sunrise;
-      const currentSunSet = forecast.forecastday[0].astro.sunset;
-
-      sunriseFourth.textContent = `${currentSunRise}`;
-      sunsetFourth.textContent = `${currentSunSet}`;
-      const tempElement = document.getElementById("setForC-fourth");
-      tempElement.textContent = "°C";
-
-      let isCelsius = true;
-      tempFourth.textContent = `${currentTempC}`;
-      function displayTemperature() {
-        if (isCelsius) {
-          tempElement.textContent = "°C";
-          tempFourth.textContent = `${currentTempC}`;
+  if (thirdCityName === "") {
+    console.log("check");
+  } else {
+    fetch(
+      `https://api.weatherapi.com/v1/forecast.json?key=${forecastAPIKEY}%20&q=${thirdCityName}&days=7&aqi=no&alerts=no`
+    )
+      .then((result) => {
+        if (result.ok) {
+          return result.json();
         } else {
-          tempElement.textContent = "°F";
-          tempFourth.textContent = `${currentTempF}`;
+          console.log("error");
         }
-      }
+      })
+      .then((data) => {
+        const current = data.current;
+        const forecast = data.forecast;
+        const country = data.location.country;
+        const currentConditionTextFourth = current.condition.text; // set variable for weather
+        const currentWindSpeed = current.wind_kph; //
+        const currentHumidity = current.humidity;
+        const currentTempC = current.temp_c;
+        const imageSrc = setCurrentWeatherImage(currentConditionTextFourth);
+        const currentTempF = current.temp_f;
 
-      function toggleUnits() {
-        isCelsius = !isCelsius;
-        displayTemperature();
-      }
+        const currentSunRise = forecast.forecastday[0].astro.sunrise;
+        const currentSunSet = forecast.forecastday[0].astro.sunset;
 
-      document
-        .getElementById("widget-temp-fourth")
-        .addEventListener("click", toggleUnits);
+        sunriseFourth.textContent = `${currentSunRise}`;
+        sunsetFourth.textContent = `${currentSunSet}`;
+        const tempElement = document.getElementById("setForC-fourth");
+        tempElement.textContent = "°C";
 
-      function setBackground(hours) {
-        if (hours >= 6 && hours < 18) {
-          document.body.style.backgroundImage =
-            "url('./photo/background-day.jpg')";
-          console.log("day");
-        } else {
-          document.body.style.backgroundImage =
-            "url('./photo/background-night.jpg')";
-          console.log("night");
+        let isCelsius = true;
+        tempFourth.textContent = `${currentTempC}`;
+        function displayTemperature() {
+          if (isCelsius) {
+            tempElement.textContent = "°C";
+            tempFourth.textContent = `${currentTempC}`;
+          } else {
+            tempElement.textContent = "°F";
+            tempFourth.textContent = `${currentTempF}`;
+          }
         }
-      }
-      const localTime = new Date(data.location.localtime);
-      setBackground(localTime.getHours());
-      setInterval(setBackground, 60000);
 
-      //ANIMATIONS
-      const timeWidget = document.querySelectorAll(
-        ".city-three .status-widget-1"
-      );
-      const forecastDayAnim = document.querySelectorAll(
-        ".city-three .forecast-container .forecast-day"
-      );
-      const forecastImgAnimA = document.querySelectorAll(
-        ".city-three .forecast-container #fourth-forecast-weather-img-a"
-      );
-      const forecastImgAnimB = document.querySelectorAll(
-        ".city-three .forecast-container #fourth-forecast-weather-img-b"
-      );
-      const forecastImgAnimC = document.querySelectorAll(
-        ".city-three .forecast-container #fourth-forecast-weather-img-c"
-      );
-      const forecastImgAnimD = document.querySelectorAll(
-        ".city-three .forecast-container #fourth-forecast-weather-img-d"
-      );
-      const forecastImgAnimE = document.querySelectorAll(
-        ".city-three .forecast-container #fourth-forecast-weather-img-e"
-      );
-      const forecastImgAnimF = document.querySelectorAll(
-        ".city-three .forecast-container #fourth-forecast-weather-img-f"
-      );
+        function toggleUnits() {
+          isCelsius = !isCelsius;
+          displayTemperature();
+        }
 
-      const tl = new TimelineMax();
+        document
+          .getElementById("widget-temp-fourth")
+          .addEventListener("click", toggleUnits);
 
-      tl.fromTo(
-        timeWidget,
-        2,
-        { opacity: "0" },
-        { opacity: "1", ease: Power2.easeInOut }
-      )
-        .fromTo(
-          weatherImageSrcFourth,
-          3,
-          { opacity: "0" },
-          { opacity: "1", ease: Power2.easeInOut },
-          "-=2"
-        )
-        .fromTo(
-          fourthCurrentWeather,
-          3,
-          { opacity: "0" },
-          { opacity: "1", ease: Power2.easeInOut },
-          "-=2"
-        )
-        .fromTo(
-          forecastDayAnim,
-          2,
-          { opacity: "0" },
-          { opacity: "1", ease: Power2.easeInOut },
-          "-=3"
-        )
-        .fromTo(
-          forecastImgAnimA,
-          2,
-          { opacity: "0" },
-          { opacity: "1", ease: Power2.easeInOut },
-          "-=2.5"
-        )
-        .fromTo(
-          forecastImgAnimB,
-          2.25,
-          { opacity: "0" },
-          { opacity: "1", ease: Power2.easeInOut },
-          "-=2.5"
-        )
-        .fromTo(
-          forecastImgAnimC,
-          2.5,
-          { opacity: "0" },
-          { opacity: "1", ease: Power2.easeInOut },
-          "-=2.5"
-        )
-        .fromTo(
-          forecastImgAnimD,
-          2.75,
-          { opacity: "0" },
-          { opacity: "1", ease: Power2.easeInOut },
-          "-=2.5"
-        )
-        .fromTo(
-          forecastImgAnimE,
-          3,
-          { opacity: "0" },
-          { opacity: "1", ease: Power2.easeInOut },
-          "-=2.5"
-        )
-        .fromTo(
-          forecastImgAnimF,
-          3.25,
-          { opacity: "0" },
-          { opacity: "1", ease: Power2.easeInOut },
-          "-=2.5"
+        function setBackground(hours) {
+          if (hours >= 6 && hours < 18) {
+            document.body.style.backgroundImage =
+              "url('./photo/background-day.jpg')";
+            console.log("day");
+          } else {
+            document.body.style.backgroundImage =
+              "url('./photo/background-night.jpg')";
+            console.log("night");
+          }
+        }
+        const localTime = new Date(data.location.localtime);
+        setBackground(localTime.getHours());
+        setInterval(setBackground, 60000);
+
+        //ANIMATIONS
+        const timeWidget = document.querySelectorAll(
+          ".city-three .status-widget-1"
+        );
+        const forecastDayAnim = document.querySelectorAll(
+          ".city-three .forecast-container .forecast-day"
+        );
+        const forecastImgAnimA = document.querySelectorAll(
+          ".city-three .forecast-container #fourth-forecast-weather-img-a"
+        );
+        const forecastImgAnimB = document.querySelectorAll(
+          ".city-three .forecast-container #fourth-forecast-weather-img-b"
+        );
+        const forecastImgAnimC = document.querySelectorAll(
+          ".city-three .forecast-container #fourth-forecast-weather-img-c"
+        );
+        const forecastImgAnimD = document.querySelectorAll(
+          ".city-three .forecast-container #fourth-forecast-weather-img-d"
+        );
+        const forecastImgAnimE = document.querySelectorAll(
+          ".city-three .forecast-container #fourth-forecast-weather-img-e"
+        );
+        const forecastImgAnimF = document.querySelectorAll(
+          ".city-three .forecast-container #fourth-forecast-weather-img-f"
         );
 
-      //FORECAST
-      const forecastDays2 = [];
+        const tl = new TimelineMax();
 
-      for (let i = 1; i <= 6; i++) {
-        const dayForecast = forecast.forecastday[i];
-        forecastDays2.push(dayForecast.date);
+        tl.fromTo(
+          timeWidget,
+          2,
+          { opacity: "0" },
+          { opacity: "1", ease: Power2.easeInOut }
+        )
+          .fromTo(
+            weatherImageSrcFourth,
+            3,
+            { opacity: "0" },
+            { opacity: "1", ease: Power2.easeInOut },
+            "-=2"
+          )
+          .fromTo(
+            fourthCurrentWeather,
+            3,
+            { opacity: "0" },
+            { opacity: "1", ease: Power2.easeInOut },
+            "-=2"
+          )
+          .fromTo(
+            forecastDayAnim,
+            2,
+            { opacity: "0" },
+            { opacity: "1", ease: Power2.easeInOut },
+            "-=3"
+          )
+          .fromTo(
+            forecastImgAnimA,
+            2,
+            { opacity: "0" },
+            { opacity: "1", ease: Power2.easeInOut },
+            "-=2.5"
+          )
+          .fromTo(
+            forecastImgAnimB,
+            2.25,
+            { opacity: "0" },
+            { opacity: "1", ease: Power2.easeInOut },
+            "-=2.5"
+          )
+          .fromTo(
+            forecastImgAnimC,
+            2.5,
+            { opacity: "0" },
+            { opacity: "1", ease: Power2.easeInOut },
+            "-=2.5"
+          )
+          .fromTo(
+            forecastImgAnimD,
+            2.75,
+            { opacity: "0" },
+            { opacity: "1", ease: Power2.easeInOut },
+            "-=2.5"
+          )
+          .fromTo(
+            forecastImgAnimE,
+            3,
+            { opacity: "0" },
+            { opacity: "1", ease: Power2.easeInOut },
+            "-=2.5"
+          )
+          .fromTo(
+            forecastImgAnimF,
+            3.25,
+            { opacity: "0" },
+            { opacity: "1", ease: Power2.easeInOut },
+            "-=2.5"
+          );
 
-        const dateStr = dayForecast.date;
-        const date = new Date(dateStr);
-        const dayOfWeek = date.toLocaleDateString("en-US", { weekday: "long" });
+        //FORECAST
+        const forecastDays2 = [];
 
-        const dayElement = document.getElementById(`day-${i}-fourth`);
-        dayElement.textContent = dayOfWeek;
-      }
+        for (let i = 1; i <= 6; i++) {
+          const dayForecast = forecast.forecastday[i];
+          forecastDays2.push(dayForecast.date);
 
-      // STORES FORECAST CONDITION TO CORRESPONDING DAY
+          const dateStr = dayForecast.date;
+          const date = new Date(dateStr);
+          const dayOfWeek = date.toLocaleDateString("en-US", {
+            weekday: "long",
+          });
 
-      const weatherConditions = getForecastWeatherConditions(data);
+          const dayElement = document.getElementById(`day-${i}-fourth`);
+          dayElement.textContent = dayOfWeek;
+        }
 
-      // STORE VARIABLE NAME FROM HTML IMG ID
+        // STORES FORECAST CONDITION TO CORRESPONDING DAY
 
-      const forecastA = document.getElementById(
-        "fourth-forecast-weather-img-a"
-      );
-      const forecastB = document.getElementById(
-        "fourth-forecast-weather-img-b"
-      );
-      const forecastC = document.getElementById(
-        "fourth-forecast-weather-img-c"
-      );
-      const forecastD = document.getElementById(
-        "fourth-forecast-weather-img-d"
-      );
-      const forecastE = document.getElementById(
-        "fourth-forecast-weather-img-e"
-      );
-      const forecastF = document.getElementById(
-        "fourth-forecast-weather-img-f"
-      );
+        const weatherConditions = getForecastWeatherConditions(data);
 
-      // SETS IMAGE SOURCE FOR EACH FORECAST
+        // STORE VARIABLE NAME FROM HTML IMG ID
 
-      forecastA.src = setCurrentWeatherImage(weatherConditions[0]);
-      forecastB.src = setCurrentWeatherImage(weatherConditions[1]);
-      forecastC.src = setCurrentWeatherImage(weatherConditions[2]);
-      forecastD.src = setCurrentWeatherImage(weatherConditions[3]);
-      forecastE.src = setCurrentWeatherImage(weatherConditions[4]);
-      forecastF.src = setCurrentWeatherImage(weatherConditions[5]);
+        const forecastA = document.getElementById(
+          "fourth-forecast-weather-img-a"
+        );
+        const forecastB = document.getElementById(
+          "fourth-forecast-weather-img-b"
+        );
+        const forecastC = document.getElementById(
+          "fourth-forecast-weather-img-c"
+        );
+        const forecastD = document.getElementById(
+          "fourth-forecast-weather-img-d"
+        );
+        const forecastE = document.getElementById(
+          "fourth-forecast-weather-img-e"
+        );
+        const forecastF = document.getElementById(
+          "fourth-forecast-weather-img-f"
+        );
 
-      fourthState.textContent = `${country}`;
-      fourthCurrentWeather.textContent = `${currentConditionTextFourth}`;
-      fourthCurrentTemp.textContent = `${currentTempC}`;
-      fourthWindSpeed.textContent = `${currentWindSpeed}kph`;
-      fourthHumidity.textContent = `${currentHumidity}%`;
-      weatherImageSrcFourth.src = imageSrc;
+        // SETS IMAGE SOURCE FOR EACH FORECAST
 
-      // sets current time and current date
+        forecastA.src = setCurrentWeatherImage(weatherConditions[0]);
+        forecastB.src = setCurrentWeatherImage(weatherConditions[1]);
+        forecastC.src = setCurrentWeatherImage(weatherConditions[2]);
+        forecastD.src = setCurrentWeatherImage(weatherConditions[3]);
+        forecastE.src = setCurrentWeatherImage(weatherConditions[4]);
+        forecastF.src = setCurrentWeatherImage(weatherConditions[5]);
 
-      const weekday = new Array(
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-      );
-      const dayOfWeek = weekday[localTime.getDay()];
-      const dayOfMonth =
-        localTime.getDate() < 10
-          ? "0" + localTime.getDate()
-          : localTime.getDate();
-      const months = new Array(
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
-      );
-      const curMonth = months[localTime.getMonth()];
-      const curYear = localTime.getFullYear();
-      const curHour =
-        localTime.getHours() > 12
-          ? localTime.getHours() - 12
-          : localTime.getHours() < 10
-          ? "0" + localTime.getHours()
-          : localTime.getHours();
-      const convertHour = curHour % 12 || 12;
-      const curMinute =
-        localTime.getMinutes() < 10
-          ? "0" + localTime.getMinutes()
-          : localTime.getMinutes();
-      const curSeconds =
-        localTime.getSeconds() < 10
-          ? "0" + localTime.getSeconds()
-          : localTime.getSeconds();
-      const curMeridiem = localTime.getHours() >= 12 ? "PM" : "AM";
-      const currentDay = curMonth + " " + dayOfMonth + ", " + curYear;
+        fourthState.textContent = `${country}`;
+        fourthCurrentWeather.textContent = `${currentConditionTextFourth}`;
+        fourthCurrentTemp.textContent = `${currentTempC}`;
+        fourthWindSpeed.textContent = `${currentWindSpeed}kph`;
+        fourthHumidity.textContent = `${currentHumidity}%`;
+        weatherImageSrcFourth.src = imageSrc;
 
-      thirdCurrentTime.textContent = `${curHour}:${curMinute}`;
-      thirdtAMPM.textContent = `${curMeridiem}`;
-      thirdDate.textContent = `${curMonth} ${dayOfMonth}, ${curYear}`;
-      thirdCurrentDay.textContent = `${dayOfWeek}`;
-    });
+        // sets current time and current date
+
+        const weekday = new Array(
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        );
+        const dayOfWeek = weekday[localTime.getDay()];
+        const dayOfMonth =
+          localTime.getDate() < 10
+            ? "0" + localTime.getDate()
+            : localTime.getDate();
+        const months = new Array(
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December"
+        );
+        const curMonth = months[localTime.getMonth()];
+        const curYear = localTime.getFullYear();
+        const curHour =
+          localTime.getHours() > 12
+            ? localTime.getHours() - 12
+            : localTime.getHours() < 10
+            ? "0" + localTime.getHours()
+            : localTime.getHours();
+        const convertHour = curHour % 12 || 12;
+        const curMinute =
+          localTime.getMinutes() < 10
+            ? "0" + localTime.getMinutes()
+            : localTime.getMinutes();
+        const curSeconds =
+          localTime.getSeconds() < 10
+            ? "0" + localTime.getSeconds()
+            : localTime.getSeconds();
+        const curMeridiem = localTime.getHours() >= 12 ? "PM" : "AM";
+        const currentDay = curMonth + " " + dayOfMonth + ", " + curYear;
+
+        thirdCurrentTime.textContent = `${curHour}:${curMinute}`;
+        thirdtAMPM.textContent = `${curMeridiem}`;
+        thirdDate.textContent = `${curMonth} ${dayOfMonth}, ${curYear}`;
+        thirdCurrentDay.textContent = `${dayOfWeek}`;
+      });
+  }
 };
 
 const inputElement3 = document.getElementById("third-search-box");
