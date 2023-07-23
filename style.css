@@ -20,6 +20,22 @@
 
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color-day);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--font-color-day);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2B8EAD;
+}
+
 h1 {
   font-family: var(--main-font);
   font-weight: 600;
