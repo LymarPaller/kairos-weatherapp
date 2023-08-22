@@ -3,7 +3,7 @@
 // cosnt geoLocAPI2 = `https://api.openweathermap.org/geo/1.0/reverse?lat=10.6066483&lon=123.0404676&appid=42207e457e3eb8b6df3dd8146f5bfc1b`
 
 const geoLocAPIKEY = "42207e457e3eb8b6df3dd8146f5bfc1b";
-const forecastAPIKEY = "b949fd5cf08a4f2496f14101231907";
+const forecastAPIKEY = "c912ad571dc44af2bec235453232208";
 
 // variables for MAIN div
 
